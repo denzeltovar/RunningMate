@@ -104,8 +104,7 @@ The scope for the project fulfills all the requirments for the app although the 
    
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="Yhttps://ibb.co/rvmppg3" width=600>
-<img src="https://ibb.co/cgz6P1m" width=600>
+<a href="https://ibb.co/cgz6P1m"><img src="https://i.ibb.co/kHY4pxd/Wireframe-2.jpg" alt="Wireframe-2" border="0"></a>
 
 
 
