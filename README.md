@@ -107,5 +107,47 @@ The scope for the project fulfills all the requirments for the app although the 
 <a href="https://ibb.co/rvmppg3"><img src="https://i.ibb.co/x3DggyY/wireframe.jpg" alt="wireframe" border="0"></a>
 <a href="https://ibb.co/cgz6P1m"><img src="https://i.ibb.co/kHY4pxd/Wireframe-2.jpg" alt="Wireframe-2" border="0"></a>
 
+## Schema 
+### Models
+#### Post
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectId      | String   | unique id for the user post (default field) |
+   | author        | Pointer to User| image author |
+   | image         | File     | Profile Image of User |
+   | notes.        | String   | Note created for the workout |
+   | createdAt     | DateTime | date when post is created (default field) |
+   | updatedAt     | DateTime | date when post is last updated (default field) |
+   | Miles Ran     | Number.  | Log the total amount of miles ran by user |
+   | didFinishRun  | Bool.    | For when the user marks they have finished the workout|
+### Networking
+#### List of network requests by screen
+   - Home Feed Screen
+      - (Read/GET) Query all posts where user is author
+         ```swift
+         let query = PFQuery(className:"WorkOut")
+         query.whereKey("author", equalTo: currentUser)
+         query.order(byDescending: "createdAt")
+         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
+            if let error = error { 
+               print(error.localizedDescription)
+            } else if let posts = posts {
+               print("Successfully retrieved \(posts.count) posts.")
+           // TODO: Do something with posts...
+            }
+         }
+         ```
+      - (Create/POST) Create a new note for the day
+      - (Delete) Delete existing note
+      - (Create/POST) Add adittional event for the week
+      - (Delete) Delete existing event
+      - (Create/POST) Add a buttin that confirms id user did workout
+      - (Delete) Reverse action 
+   - Create Post Screen
+      - (Create/POST) Create a new Workout object
+   - Profile Screen
+      - (Read/GET) Query logged in user object
+      - (Update/PUT) Update user profile image
 
 
