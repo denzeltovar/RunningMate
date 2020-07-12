@@ -120,7 +120,10 @@ The scope for the project fulfills all the requirments for the app although the 
    | createdAt     | DateTime | date when post is created (default field) |
    | updatedAt     | DateTime | date when post is last updated (default field) |
    | Miles Ran     | Number.  | Log the total amount of miles ran by user |
-   | didFinishRun  | Bool.    | For when the user marks they have finished the workout|
+   | distancePlan  | Number   | The distance the user want to run 5k, 15k, Half- Marathon|
+   | experienceRunning| String   | Users previous running expereince|
+   | difficultyRun | String    | How fast the user wants to finish the workout plan|
+
 ### Networking
 #### List of network requests by screen
    - Home Feed Screen
