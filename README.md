@@ -1,4 +1,4 @@
-# True-life
+# Running Mate
 
 ## Table of Contents
 1. [Overview](#Overview)
