@@ -35,12 +35,16 @@ The scope for the project fulfills all the requirments for the app although the 
 * Add camera usage for profile picture
 * Have user set goals and prefereneces
 * Have entered information create a plan that is then sent to their calander
+* Set Up workout plans in database and create a function that would pull workout plan
+  from Parse dependant of their choices set up from their goals.
 * Also have labels that shows this weeks goals and percantage of improvment from previous week
 * Creating a Tab bar to acess two other tabs
-* Use FSCalander Framework to create calander tab
+* Use FSCalander Framework to create calander in calander tab
 * Establish the settings tab and creating a detail view controller for Notifications
 * Set notifications to remind user of workouts
 * Be able to properly tranistion throughout all screens.
+* Have all 3 Tabs to interacts sommothly
+* Fix UI to make it look more representable
 
 
 **Optional Nice-to-have Stories**
@@ -51,8 +55,8 @@ The scope for the project fulfills all the requirments for the app although the 
 *  Add an additional tab for "Events"
 * Connect to Running API and be able to display local races
 * Be able to search for races
-* Have customizable filters for settings
-* Be able to add event to calander
+* Have customizable filters for searching for racea
+* Be able to add event to calander from event tab
 
 ### 2. Screen Archetypes
 
