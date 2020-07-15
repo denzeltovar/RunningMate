@@ -19,6 +19,7 @@
 		CC2D935824BCD7B00016E5D2 /* RunningMateFBUUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D935724BCD7B00016E5D2 /* RunningMateFBUUITests.m */; };
 		CC50225E24BE11690081F565 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC50225D24BE11690081F565 /* HomeViewController.m */; };
 		CC50226124BE13A40081F565 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC50226024BE13A40081F565 /* SettingsTableViewController.m */; };
+		CC5A447F24BFABEE00306D0E /* LogOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A447E24BFABEE00306D0E /* LogOutViewController.m */; };
 		CC7E522724BE5162008808A3 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7E522624BE5162008808A3 /* SignUpViewController.m */; };
 		CCB8F21524BE1D6B0031707D /* CalanderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB8F21424BE1D6B0031707D /* CalanderViewController.m */; };
 		CCC2F42724BCFFD900091F25 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC2F42624BCFFD900091F25 /* LoginViewController.m */; };
@@ -69,6 +70,8 @@
 		CC50225D24BE11690081F565 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		CC50225F24BE13A40081F565 /* SettingsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		CC50226024BE13A40081F565 /* SettingsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		CC5A447D24BFABEE00306D0E /* LogOutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogOutViewController.h; sourceTree = "<group>"; };
+		CC5A447E24BFABEE00306D0E /* LogOutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogOutViewController.m; sourceTree = "<group>"; };
 		CC7E522524BE5162008808A3 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		CC7E522624BE5162008808A3 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		CCB8F21324BE1D6B0031707D /* CalanderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalanderViewController.h; sourceTree = "<group>"; };
@@ -203,6 +206,8 @@
 				CC50226024BE13A40081F565 /* SettingsTableViewController.m */,
 				CCB8F21324BE1D6B0031707D /* CalanderViewController.h */,
 				CCB8F21424BE1D6B0031707D /* CalanderViewController.m */,
+				CC5A447D24BFABEE00306D0E /* LogOutViewController.h */,
+				CC5A447E24BFABEE00306D0E /* LogOutViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -459,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC5A447F24BFABEE00306D0E /* LogOutViewController.m in Sources */,
 				CC50226124BE13A40081F565 /* SettingsTableViewController.m in Sources */,
 				CCC2F42724BCFFD900091F25 /* LoginViewController.m in Sources */,
 				CC2D933224BCD7AF0016E5D2 /* AppDelegate.m in Sources */,
