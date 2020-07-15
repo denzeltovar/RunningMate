@@ -21,7 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 - (IBAction)didTapRegister:(id)sender {
     PFUser *newUser = [PFUser user];
@@ -32,7 +31,6 @@
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         if (error == nil){
             [self performSegueWithIdentifier:@"homeViewSegue" sender:nil];
-            
         }
     }];
 }

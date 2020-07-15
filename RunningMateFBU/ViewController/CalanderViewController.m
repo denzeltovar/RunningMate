@@ -17,6 +17,7 @@
 
 @implementation CalanderViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -24,8 +25,6 @@
     calendar.dataSource = self;
     calendar.delegate = self;
     self.calendar = calendar;
-    
-    
 }
 
 

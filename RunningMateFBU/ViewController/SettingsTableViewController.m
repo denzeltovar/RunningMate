@@ -9,6 +9,7 @@
 #import "SettingsTableViewController.h"
 
 @interface SettingsTableViewController ()
+
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -16,22 +17,13 @@
 @implementation SettingsTableViewController
 
 @dynamic tableView;
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
 }
-//- (IBSegueAction UIViewController *)didTapLogout:(NSCoder *)coder {
-//    return [[UIViewController alloc] initWithCoder:<#(nonnull NSCoder *)#>];
-//}
+
 
 
 
