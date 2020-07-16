@@ -13,7 +13,6 @@
 
 @interface HomeViewController ()
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
-
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentDayTimestampLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentDayWorkoutLabel;
@@ -26,7 +25,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self fetchUserProfile];
 }
 
@@ -37,25 +35,16 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable userProfile, NSError * _Nullable error) {
         if (userProfile != nil){
             self.userProfile = userProfile[0];
-            NSLog(@"%@", self.userProfile);
             self.profileImage.file = self.userProfile.image;
             self.personalMessageLabel.text = self.userProfile.personalMessage;
             [self.profileImage loadInBackground];
-
         }
     }];
-    
 }
-
-
 
 - (IBAction)didtapUpdateProfileImage:(id)sender {
     [self performSegueWithIdentifier:@"updateProfileSegue" sender:nil];
 }
-
-
-
-
 /*
 #pragma mark - Navigation
 
