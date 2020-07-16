@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserProfile.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface HomeViewController : UIViewController
+
+@property (strong, nonatomic) UserProfile *userProfile;
+
 
 @end
 

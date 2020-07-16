@@ -7,13 +7,18 @@
 //
 
 #import "HomeViewController.h"
+#import "UserProfile.h"
+#import <Parse/Parse.h>
+@import Parse;
 
 @interface HomeViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet PFImageView *profileImage;
+
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentDayTimestampLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentDayWorkoutLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalMilesRanLabel;
+@property (weak, nonatomic) IBOutlet UILabel *personalMessageLabel;
 
 @end
 
@@ -21,42 +26,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self fetchUserProfile];
 }
+
+-(void)fetchUserProfile{
+    PFQuery *query = [PFQuery queryWithClassName:@"UserProfile"];
+    [query whereKey:@"author" equalTo: [PFUser currentUser]];
+    [query orderByDescending: @"updatedAt"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable userProfile, NSError * _Nullable error) {
+        if (userProfile != nil){
+            self.userProfile = userProfile[0];
+            NSLog(@"%@", self.userProfile);
+            self.profileImage.file = self.userProfile.image;
+            self.personalMessageLabel.text = self.userProfile.personalMessage;
+            [self.profileImage loadInBackground];
+
+        }
+    }];
+    
+}
+
+
+
 - (IBAction)didtapUpdateProfileImage:(id)sender {
-    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
-    imagePickerVC.delegate = self;
-    imagePickerVC.allowsEditing = YES;
-    
-    [self presentViewController:imagePickerVC animated:YES completion:nil];
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }
-    else {
-        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
+    [self performSegueWithIdentifier:@"updateProfileSegue" sender:nil];
 }
 
-- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
-    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
-    
-    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
-    resizeImageView.image = image;
-    
-    UIGraphicsBeginImageContext(size);
-    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return newImage;
-}
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
 
-    self.profileImage.image = [self resizeImage:editedImage withSize:CGSizeMake(414, 414)];
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
 
 
 /*
