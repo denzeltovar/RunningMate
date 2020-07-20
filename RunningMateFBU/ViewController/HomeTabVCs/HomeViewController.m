@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "UserProfile.h"
 #import <Parse/Parse.h>
+
 @import Parse;
 
 @interface HomeViewController ()
@@ -33,7 +34,7 @@
     [query whereKey:@"author" equalTo: [PFUser currentUser]];
     [query orderByDescending: @"updatedAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable userProfile, NSError * _Nullable error) {
-        if (userProfile != nil){
+        if (userProfile && userProfile.count != 0){
             self.userProfile = userProfile[0];
             self.profileImage.file = self.userProfile.image;
             self.personalMessageLabel.text = self.userProfile.personalMessage;

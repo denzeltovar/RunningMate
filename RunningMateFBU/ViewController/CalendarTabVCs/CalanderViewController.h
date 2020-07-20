@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CalanderViewController : UIViewController <FSCalendarDelegate, FSCalendarDataSource>
+@interface CalanderViewController : UIViewController
 
 @end
 

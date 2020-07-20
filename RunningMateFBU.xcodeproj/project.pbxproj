@@ -24,6 +24,7 @@
 		CC5A448824C0A22A00306D0E /* UpdateProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A448724C0A22A00306D0E /* UpdateProfileViewController.m */; };
 		CC5A448B24C0B60D00306D0E /* UserProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A448A24C0B60D00306D0E /* UserProfile.m */; };
 		CC7E522724BE5162008808A3 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC7E522624BE5162008808A3 /* SignUpViewController.m */; };
+		CCA6E48524C55E9500022825 /* WorkoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA6E48424C55E9500022825 /* WorkoutCell.m */; };
 		CCB8F21524BE1D6B0031707D /* CalanderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCB8F21424BE1D6B0031707D /* CalanderViewController.m */; };
 		CCC2F42724BCFFD900091F25 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC2F42624BCFFD900091F25 /* LoginViewController.m */; };
 		E4CC2810A1F724956074F736 /* Pods_RunningMateFBUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A131F1F1FBAE3E16EABC133E /* Pods_RunningMateFBUTests.framework */; };
@@ -83,6 +84,8 @@
 		CC5A448A24C0B60D00306D0E /* UserProfile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserProfile.m; sourceTree = "<group>"; };
 		CC7E522524BE5162008808A3 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		CC7E522624BE5162008808A3 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		CCA6E48324C55E9500022825 /* WorkoutCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkoutCell.h; sourceTree = "<group>"; };
+		CCA6E48424C55E9500022825 /* WorkoutCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkoutCell.m; sourceTree = "<group>"; };
 		CCB8F21324BE1D6B0031707D /* CalanderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalanderViewController.h; sourceTree = "<group>"; };
 		CCB8F21424BE1D6B0031707D /* CalanderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalanderViewController.m; sourceTree = "<group>"; };
 		CCC2F42524BCFFD900091F25 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -202,25 +205,57 @@
 			path = RunningMateFBUUITests;
 			sourceTree = "<group>";
 		};
-		CCC2F42124BCFF4E00091F25 /* ViewController */ = {
+		CCA6E48B24C606FC00022825 /* SettingsTabVCs */ = {
+			isa = PBXGroup;
+			children = (
+				CC50225F24BE13A40081F565 /* SettingsTableViewController.h */,
+				CC50226024BE13A40081F565 /* SettingsTableViewController.m */,
+				CC5A447D24BFABEE00306D0E /* LogOutViewController.h */,
+				CC5A447E24BFABEE00306D0E /* LogOutViewController.m */,
+				CC5A448024BFB51300306D0E /* GoalsViewController.h */,
+				CC5A448124BFB51300306D0E /* GoalsViewController.m */,
+			);
+			path = SettingsTabVCs;
+			sourceTree = "<group>";
+		};
+		CCA6E48C24C6070F00022825 /* LoginTabVCs */ = {
 			isa = PBXGroup;
 			children = (
 				CCC2F42524BCFFD900091F25 /* LoginViewController.h */,
 				CCC2F42624BCFFD900091F25 /* LoginViewController.m */,
 				CC7E522524BE5162008808A3 /* SignUpViewController.h */,
 				CC7E522624BE5162008808A3 /* SignUpViewController.m */,
+			);
+			path = LoginTabVCs;
+			sourceTree = "<group>";
+		};
+		CCA6E48D24C6074D00022825 /* HomeTabVCs */ = {
+			isa = PBXGroup;
+			children = (
 				CC50225C24BE11690081F565 /* HomeViewController.h */,
 				CC50225D24BE11690081F565 /* HomeViewController.m */,
-				CC50225F24BE13A40081F565 /* SettingsTableViewController.h */,
-				CC50226024BE13A40081F565 /* SettingsTableViewController.m */,
-				CCB8F21324BE1D6B0031707D /* CalanderViewController.h */,
-				CCB8F21424BE1D6B0031707D /* CalanderViewController.m */,
-				CC5A447D24BFABEE00306D0E /* LogOutViewController.h */,
-				CC5A447E24BFABEE00306D0E /* LogOutViewController.m */,
-				CC5A448024BFB51300306D0E /* GoalsViewController.h */,
-				CC5A448124BFB51300306D0E /* GoalsViewController.m */,
 				CC5A448624C0A22A00306D0E /* UpdateProfileViewController.h */,
 				CC5A448724C0A22A00306D0E /* UpdateProfileViewController.m */,
+			);
+			path = HomeTabVCs;
+			sourceTree = "<group>";
+		};
+		CCA6E48E24C607F500022825 /* CalendarTabVCs */ = {
+			isa = PBXGroup;
+			children = (
+				CCB8F21324BE1D6B0031707D /* CalanderViewController.h */,
+				CCB8F21424BE1D6B0031707D /* CalanderViewController.m */,
+			);
+			path = CalendarTabVCs;
+			sourceTree = "<group>";
+		};
+		CCC2F42124BCFF4E00091F25 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CCA6E48E24C607F500022825 /* CalendarTabVCs */,
+				CCA6E48D24C6074D00022825 /* HomeTabVCs */,
+				CCA6E48C24C6070F00022825 /* LoginTabVCs */,
+				CCA6E48B24C606FC00022825 /* SettingsTabVCs */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -237,6 +272,8 @@
 		CCC2F42424BCFF8F00091F25 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CCA6E48324C55E9500022825 /* WorkoutCell.h */,
+				CCA6E48424C55E9500022825 /* WorkoutCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -488,6 +525,7 @@
 				CC2D933524BCD7AF0016E5D2 /* SceneDelegate.m in Sources */,
 				CC5A448B24C0B60D00306D0E /* UserProfile.m in Sources */,
 				CC50225E24BE11690081F565 /* HomeViewController.m in Sources */,
+				CCA6E48524C55E9500022825 /* WorkoutCell.m in Sources */,
 				CC7E522724BE5162008808A3 /* SignUpViewController.m in Sources */,
 				CC5A448224BFB51300306D0E /* GoalsViewController.m in Sources */,
 				CC5A448824C0A22A00306D0E /* UpdateProfileViewController.m in Sources */,

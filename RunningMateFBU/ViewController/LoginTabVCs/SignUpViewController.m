@@ -8,13 +8,10 @@
 
 #import "SignUpViewController.h"
 @import Parse;
-
 @interface SignUpViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UITextField *fullNameTextField;
-
-
 @end
 
 @implementation SignUpViewController
@@ -22,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
+
 - (IBAction)didTapRegister:(id)sender {
     PFUser *newUser = [PFUser user];
     newUser.username = self.usernameTextField.text;
@@ -34,9 +32,9 @@
         }
     }];
 }
+
 - (IBAction)didTapHaveAcount:(id)sender {
     [self performSegueWithIdentifier:@"loginSegue" sender:nil];
-    
 }
 
 
