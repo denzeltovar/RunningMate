@@ -17,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *calendarHeightConstraint;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
+@property (strong, nonatomic) NSDateFormatter *dateFormatter2;
+
+@property (strong, nonatomic) NSArray *datesWithEvent;
 @end
 
 @implementation CalanderViewController
@@ -30,7 +33,16 @@
     if (self) {
         self.dateFormatter = [[NSDateFormatter alloc] init];
         self.dateFormatter.dateFormat = @"yyyy/MM/dd";
+        
+        self.datesWithEvent = @[@"2020-07-03",
+                                   @"2020-07-06",
+                                   @"2020-07-12",
+                                   @"2020-07-25"];
+        
+        self.dateFormatter2 = [[NSDateFormatter alloc] init];
+        self.dateFormatter2.dateFormat = @"yyyy-MM-dd";
     }
+    
     return self;
 }
 
@@ -51,24 +63,30 @@
     NSLog(@"%s",__FUNCTION__);
 }
 
+#pragma mark - <FSCalendarDataSource>
+
+- (NSInteger)calendar:(FSCalendar *)calendar numberOfEventsForDate:(NSDate *)date {
+    NSString *dateString = [self.dateFormatter2 stringFromDate:date];
+    if ([_datesWithEvent containsObject:dateString]) {
+        return 1;
+    }
+    return 0;
+}
+
 
 #pragma mark - <FSCalendarDelegate>
 
 - (void)calendar:(FSCalendar *)calendar didSelectDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition
 {
-    NSLog(@"did select date %@",[self.dateFormatter stringFromDate:date]);
-    
     NSMutableArray *selectedDates = [NSMutableArray arrayWithCapacity:calendar.selectedDates.count];
     [calendar.selectedDates enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         [selectedDates addObject:[self.dateFormatter stringFromDate:obj]];
     }];
-    NSLog(@"selected dates is %@",selectedDates);
+    
     if (monthPosition == FSCalendarMonthPositionNext || monthPosition == FSCalendarMonthPositionPrevious) {
         [calendar setCurrentPage:date animated:YES];
     }
 }
-
-
 
 #pragma mark - <UITableViewDataSource>
 
@@ -85,16 +103,5 @@
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
-
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

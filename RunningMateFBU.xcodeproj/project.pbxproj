@@ -218,7 +218,7 @@
 			path = SettingsTabVCs;
 			sourceTree = "<group>";
 		};
-		CCA6E48C24C6070F00022825 /* LoginTabVCs */ = {
+		CCA6E48C24C6070F00022825 /* Login&SignUpVC's */ = {
 			isa = PBXGroup;
 			children = (
 				CCC2F42524BCFFD900091F25 /* LoginViewController.h */,
@@ -226,7 +226,7 @@
 				CC7E522524BE5162008808A3 /* SignUpViewController.h */,
 				CC7E522624BE5162008808A3 /* SignUpViewController.m */,
 			);
-			path = LoginTabVCs;
+			path = "Login&SignUpVC's";
 			sourceTree = "<group>";
 		};
 		CCA6E48D24C6074D00022825 /* HomeTabVCs */ = {
@@ -254,7 +254,7 @@
 			children = (
 				CCA6E48E24C607F500022825 /* CalendarTabVCs */,
 				CCA6E48D24C6074D00022825 /* HomeTabVCs */,
-				CCA6E48C24C6070F00022825 /* LoginTabVCs */,
+				CCA6E48C24C6070F00022825 /* Login&SignUpVC's */,
 				CCA6E48B24C606FC00022825 /* SettingsTabVCs */,
 			);
 			path = ViewController;

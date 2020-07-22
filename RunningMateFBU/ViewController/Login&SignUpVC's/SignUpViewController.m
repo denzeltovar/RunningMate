@@ -24,7 +24,6 @@
     PFUser *newUser = [PFUser user];
     newUser.username = self.usernameTextField.text;
     newUser.password = self.passwordTextField.text;
-    //newUser.fullName = self.fullNameTextField.text;
     [newUser signUpInBackground];
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         if (error == nil){
@@ -36,16 +35,5 @@
 - (IBAction)didTapHaveAcount:(id)sender {
     [self performSegueWithIdentifier:@"loginSegue" sender:nil];
 }
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

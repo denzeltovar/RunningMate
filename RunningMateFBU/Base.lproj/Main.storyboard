@@ -512,7 +512,6 @@
                                 <state key="normal" title="Confirm"/>
                                 <connections>
                                     <action selector="didTapConfirmGoals:" destination="ZhP-ZI-0Tz" eventType="touchUpInside" id="DUG-6i-rME"/>
-                                    <segue destination="b5q-bK-1eJ" kind="show" identifier="TabBarViewController" id="poe-t3-88K"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What time do you prefer your workouts?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1t-qC-xU6">
@@ -806,7 +805,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vRr-6U-A4N"/>
         <segue reference="8Ca-kM-XKN"/>
         <segue reference="vo3-i1-5vM"/>
     </inferredMetricsTieBreakers>
