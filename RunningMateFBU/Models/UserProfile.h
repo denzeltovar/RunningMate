@@ -14,14 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *postID;
 @property (nonatomic, strong) NSString *userID;
 @property (nonatomic, strong) PFUser *author;
-
 @property (nonatomic, strong) NSString *personalMessage;
 @property (nonatomic, strong) PFFileObject *image;
 
-
 + (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )personalMessage withCompletion: (PFBooleanResultBlock  _Nullable)completion;
-
-
 
 @end
 

@@ -12,11 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WorkoutCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *eventDateLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *todaysDate;
 @property (weak, nonatomic) IBOutlet UILabel *eventWorkoutLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *didFinishWorkoutLabel;
-
 
 @end
 

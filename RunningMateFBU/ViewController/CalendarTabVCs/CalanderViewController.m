@@ -34,13 +34,13 @@
         self.dateFormatter = [[NSDateFormatter alloc] init];
         self.dateFormatter.dateFormat = @"yyyy/MM/dd";
         
-        self.datesWithEvent = @[@"2020-07-03",
-                                   @"2020-07-06",
-                                   @"2020-07-12",
-                                   @"2020-07-25"];
-        
         self.dateFormatter2 = [[NSDateFormatter alloc] init];
         self.dateFormatter2.dateFormat = @"yyyy-MM-dd";
+        
+        self.datesWithEvent = @[@"2020-07-03",
+                                          @"2020-07-06",
+                                          @"2020-07-12",
+                                          @"2020-07-25"];
     }
     
     return self;
@@ -78,6 +78,8 @@
 
 - (void)calendar:(FSCalendar *)calendar didSelectDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition
 {
+    NSLog(@"did select date %@",[self.dateFormatter stringFromDate:date]);
+    
     NSMutableArray *selectedDates = [NSMutableArray arrayWithCapacity:calendar.selectedDates.count];
     [calendar.selectedDates enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         [selectedDates addObject:[self.dateFormatter stringFromDate:obj]];
