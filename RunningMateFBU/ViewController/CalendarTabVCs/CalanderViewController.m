@@ -9,7 +9,9 @@
 #import "CalanderViewController.h"
 #import "FSCalendar.h"
 #import "WorkoutCell.h"
+#import "WorkoutEvent.h"
 @import FSCalendar;
+@import Parse;
 
 @interface CalanderViewController ()<UITableViewDataSource,UITableViewDelegate,FSCalendarDataSource,FSCalendarDelegate,UIGestureRecognizerDelegate>
 
@@ -18,8 +20,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
 @property (strong, nonatomic) NSDateFormatter *dateFormatter2;
+@property (strong, nonatomic) NSMutableArray *datesWithEvent;
 
-@property (strong, nonatomic) NSArray *datesWithEvent;
 @end
 
 @implementation CalanderViewController
@@ -32,15 +34,12 @@
     self = [super initWithCoder:coder];
     if (self) {
         self.dateFormatter = [[NSDateFormatter alloc] init];
-        self.dateFormatter.dateFormat = @"yyyy/MM/dd";
+        self.dateFormatter.dateFormat = @"yyyy-MM-dd";
         
         self.dateFormatter2 = [[NSDateFormatter alloc] init];
-        self.dateFormatter2.dateFormat = @"yyyy-MM-dd";
+        self.dateFormatter2.dateFormat = @"yyyy-MM-dd HH:mm:ss Z";
         
-        self.datesWithEvent = @[@"2020-07-03",
-                                          @"2020-07-06",
-                                          @"2020-07-12",
-                                          @"2020-07-25"];
+           
     }
     
     return self;
@@ -59,6 +58,23 @@
     self.tableView.delegate = self;
 }
 
+-(void)fetchEventsForDates:(NSDate *)date {
+    NSTimeInterval oneDay = (double) 24 * 60 * 60;
+    
+    PFQuery *eventsQuery = [PFQuery queryWithClassName:@"WorkoutEvent"];
+    [eventsQuery orderByAscending:@"dateOfWorkout"];
+    [eventsQuery whereKey:@"dateOfWorkout" lessThan:[date dateByAddingTimeInterval:oneDay]];
+    [eventsQuery whereKey:@"dateOfWorkout" greaterThanOrEqualTo:date];
+    eventsQuery.limit = 1;
+    
+    [eventsQuery findObjectsInBackgroundWithBlock:^(NSArray<WorkoutEvent *> * _Nullable events, NSError * _Nullable error) {
+        if (events && events.count != 0) {
+            self.datesWithEvent = (NSMutableArray *) events;
+            [self.tableView reloadData];
+        }
+    }];
+}
+
 - (void)dealloc {
     NSLog(@"%s",__FUNCTION__);
 }
@@ -66,41 +82,37 @@
 #pragma mark - <FSCalendarDataSource>
 
 - (NSInteger)calendar:(FSCalendar *)calendar numberOfEventsForDate:(NSDate *)date {
-    NSString *dateString = [self.dateFormatter2 stringFromDate:date];
-    if ([_datesWithEvent containsObject:dateString]) {
+    NSString *currentDate = [self.dateFormatter stringFromDate:date];
+    if ([self.datesWithEvent containsObject:currentDate]) {
         return 1;
     }
-    return 0;
-}
+    return 0;}
 
 
 #pragma mark - <FSCalendarDelegate>
 
-- (void)calendar:(FSCalendar *)calendar didSelectDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition
-{
-    NSLog(@"did select date %@",[self.dateFormatter stringFromDate:date]);
-    
-    NSMutableArray *selectedDates = [NSMutableArray arrayWithCapacity:calendar.selectedDates.count];
-    [calendar.selectedDates enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        [selectedDates addObject:[self.dateFormatter stringFromDate:obj]];
-    }];
-    
+- (void)calendar:(FSCalendar *)calendar didSelectDate:(NSDate *)date atMonthPosition:(FSCalendarMonthPosition)monthPosition {
     if (monthPosition == FSCalendarMonthPositionNext || monthPosition == FSCalendarMonthPositionPrevious) {
         [calendar setCurrentPage:date animated:YES];
     }
+    [self fetchEventsForDates:date];
 }
 
 #pragma mark - <UITableViewDataSource>
 
 - (nonnull UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+
     WorkoutCell *cell =[tableView dequeueReusableCellWithIdentifier:@"WorkoutCell"];
-    cell.eventDateLabel.text = @"Workout Date";
-    cell.todaysDate.text = @"Today's Date";
-    cell.didFinishWorkoutLabel.on = YES;
-    cell.eventWorkoutLabel.text = @"Today's workout will consist of 1/2 mile walk, 1 mile run, and then a 1/2 cooldown";
+    WorkoutEvent *workout = self.datesWithEvent[indexPath.row];
+    NSDate *eventDate = workout.dateOfWorkout;
+    NSString *eventDateString = [_dateFormatter stringFromDate:eventDate];
+    cell.eventDateLabel.text = eventDateString;
+    cell.didFinishWorkoutSwitch = workout.didFinishWorkout;
+
+    cell.eventWorkoutLabel.text = [NSString stringWithFormat:@"Todays workout will consist of running %@ meters", workout.workout];
     return cell;
 }
+
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;

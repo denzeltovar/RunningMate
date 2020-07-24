@@ -31,9 +31,10 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSCalendarUnit unit = NSCalendarUnitDay;
     NSInteger value = 2;
-    NSDate *today = [NSDate date];
+    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSDate *today = [NSDate date];
     NSMutableArray *dates = [NSMutableArray new];
     
     NSMutableArray *workouts =[NSMutableArray new];
