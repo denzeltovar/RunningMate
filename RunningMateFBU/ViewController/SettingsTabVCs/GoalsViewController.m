@@ -7,6 +7,7 @@
 //
 
 #import "GoalsViewController.h"
+#import "WorkoutEvent.h"
 
 
 @import Parse;
@@ -61,7 +62,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"8 AM";
@@ -83,7 +84,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"1 pm";
@@ -105,7 +106,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"7 pm";
@@ -127,7 +128,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"8 AM";
@@ -149,7 +150,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"1 pm";
@@ -169,7 +170,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"7 pm";
@@ -190,7 +191,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"8 am";
@@ -211,7 +212,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"1 pm";
@@ -232,7 +233,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"7 pm";
@@ -253,7 +254,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"8 am";
@@ -274,7 +275,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"1 pm";
@@ -295,7 +296,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"7 pm";
@@ -316,7 +317,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"8 am";
@@ -337,7 +338,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"1 pm";
@@ -358,7 +359,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"7 pm";
@@ -379,7 +380,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"8 am";
@@ -400,7 +401,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"1 pm";
@@ -421,7 +422,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"7 pm";
@@ -442,7 +443,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"8 am";
@@ -463,7 +464,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"1 pm";
@@ -484,7 +485,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"7 pm";
@@ -505,7 +506,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"8 am";
@@ -526,7 +527,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"1 pm";
@@ -547,7 +548,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"7 pm";
@@ -568,7 +569,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"8 am";
@@ -589,7 +590,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"1 pm";
@@ -609,7 +610,7 @@
             NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
             today = nextWorkoutDate;
             
-            PFObject *workout = [PFObject objectWithClassName:@"WorkoutEvent"];
+            WorkoutEvent *workout = [WorkoutEvent new];
             workout[@"workout"] = workoutEvent;
             workout[@"dateOfWorkout"] = today;
             workout[@"timeOfDay"] = @"7 pm";

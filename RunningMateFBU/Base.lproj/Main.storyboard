@@ -118,7 +118,7 @@
                                 </state>
                                 <connections>
                                     <action selector="didTapRegister:" destination="4g6-Rp-w0F" eventType="touchUpInside" id="rAO-dy-Hob"/>
-                                    <segue destination="ZhP-ZI-0Tz" kind="show" identifier="goalsSegue" id="8Ca-kM-XKN"/>
+                                    <segue destination="b5q-bK-1eJ" kind="show" identifier="homeViewSegue2" id="6xe-Kt-LSy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUn-Uk-Veb">
@@ -223,6 +223,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xeh-Z5-thn">
                                                     <rect key="frame" x="345" y="162" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="didTapSwitch:" destination="DWO-wb-c5b" eventType="valueChanged" id="bso-31-oSz"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -793,7 +796,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8Ca-kM-XKN"/>
+        <segue reference="6xe-Kt-LSy"/>
         <segue reference="vo3-i1-5vM"/>
     </inferredMetricsTieBreakers>
     <resources>

@@ -27,7 +27,7 @@
     [newUser signUpInBackground];
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
         if (error == nil){
-            [self performSegueWithIdentifier:@"goalsSegue" sender:nil];
+            [self performSegueWithIdentifier:@"homeViewSegue2" sender:nil];
         }
     }];
 }
