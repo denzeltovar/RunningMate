@@ -44,7 +44,7 @@
         workout[@"workout"] = workoutEvent;
         workout[@"dateOfWorkout"] = today;
         workout[@"timeOfDay"] = timeOfWorkout;
-        workout[@"didFinishWorkout"] = @NO;
+        workout[@"didFinishWorkout"] = @0;
         [workout saveInBackground];
     }
 }

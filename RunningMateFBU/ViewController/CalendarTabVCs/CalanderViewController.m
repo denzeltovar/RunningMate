@@ -38,8 +38,6 @@
         
         self.dateFormatter2 = [[NSDateFormatter alloc] init];
         self.dateFormatter2.dateFormat = @"yyyy-MM-dd HH:mm:ss Z";
-        
-           
     }
     
     return self;
@@ -47,7 +45,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.calendar.placeholderType = FSCalendarPlaceholderTypeNone;
     self.calendar.scope = FSCalendarScopeMonth;
     
@@ -107,12 +104,15 @@
     NSDate *eventDate = workout.dateOfWorkout;
     NSString *eventDateString = [_dateFormatter stringFromDate:eventDate];
     cell.eventDateLabel.text = eventDateString;
-    cell.didFinishWorkoutSwitch = workout.didFinishWorkout;
-
     cell.eventWorkoutLabel.text = [NSString stringWithFormat:@"Todays workout will consist of running %@ meters", workout.workout];
+    cell.didFinishWorkoutSwitch.on = workout.didFinishWorkout;
+    [cell.didFinishWorkoutSwitch addTarget:self action:@selector(didTapSwitch:) forControlEvents:UIControlEventValueChanged];
     return cell;
 }
 
+- (IBAction)didTapSwitch:(id)sender {
+    
+}
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
