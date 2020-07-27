@@ -26,23 +26,23 @@
 
 -(void)sendWorkoutPlanToParseWithDistance: (int long) workoutDistancePlan timeOfWorkout:(NSString *) timeOfWorkout timeFrame:(int long) amountOfWorkouts{
     NSInteger workoutDistance = 0;
-    NSDate *today = [NSDate date];
+    NSDate *dateOfWorkout = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSCalendarUnit unit = NSCalendarUnitDay;
-    NSInteger value = 2;
+    NSInteger eventInterval = 2;
+    NSInteger incrementEachEventBy = workoutDistancePlan / amountOfWorkouts;
     
     for (int i = 0; i <= amountOfWorkouts ; i++) {
         
-        NSInteger incrementEachEventBy = workoutDistancePlan / amountOfWorkouts;
         workoutDistance =  workoutDistance + incrementEachEventBy;
         NSString *workoutEvent = [@(workoutDistance) stringValue];
         
-        NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:value toDate:today options:NSCalendarMatchStrictly];
-        today = nextWorkoutDate;
+        NSDate *nextWorkoutDate= [calendar dateByAddingUnit:unit value:eventInterval toDate:dateOfWorkout options:NSCalendarMatchStrictly];
+        dateOfWorkout = nextWorkoutDate;
         
         WorkoutEvent *workout = [WorkoutEvent new];
         workout[@"workout"] = workoutEvent;
-        workout[@"dateOfWorkout"] = today;
+        workout[@"dateOfWorkout"] = dateOfWorkout;
         workout[@"timeOfDay"] = timeOfWorkout;
         workout[@"didFinishWorkout"] = @0;
         [workout saveInBackground];
