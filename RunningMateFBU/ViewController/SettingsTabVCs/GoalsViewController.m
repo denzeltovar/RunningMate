@@ -24,6 +24,20 @@
     [super viewDidLoad];
 }
 
+-(void)updateWorkoutPlan {
+    NSDate *today = [NSDate date];
+    PFQuery *updateQuery = [PFQuery queryWithClassName:@"WorkoutEvent"];
+    [updateQuery whereKey:@"dateOfWorkout" greaterThanOrEqualTo:today];
+    [updateQuery orderByAscending:@"dateOfWorkout"];
+    [updateQuery findObjectsInBackgroundWithBlock:^(NSArray *deleteUpcomingEvents, NSError * error) {
+        if (deleteUpcomingEvents && deleteUpcomingEvents.count != 0) {
+            for (PFObject *event in deleteUpcomingEvents){
+                [event deleteInBackground];
+            }
+        }
+    }];
+}
+
 -(void)sendWorkoutPlanToParseWithDistance: (int long) workoutDistancePlan timeOfWorkout:(NSString *) timeOfWorkout timeFrame:(int long) amountOfWorkouts{
     NSInteger workoutDistance = 0;
     NSDate *dateOfWorkout = [NSDate date];
@@ -32,7 +46,7 @@
     NSInteger eventInterval = 2;
     NSInteger incrementEachEventBy = workoutDistancePlan / amountOfWorkouts;
     
-    for (int i = 0; i <= amountOfWorkouts ; i++) {
+    for (int i = 0; i < amountOfWorkouts ; i++) {
         
         workoutDistance =  workoutDistance + incrementEachEventBy;
         NSString *workoutEvent = [@(workoutDistance) stringValue];
@@ -50,6 +64,7 @@
 }
 
 - (IBAction)didTapConfirmGoals:(id)sender {
+    [self updateWorkoutPlan];
     NSInteger distanceSegmentIndex = [self.distanceSegmentedControl selectedSegmentIndex];
     NSInteger timeFrameSegmentIndex = [self.timeFrameSegmentedControl selectedSegmentIndex];
     NSInteger timeOfWorkoutSegmentIndex = [self.timeOfWorkoutSegmentedControl selectedSegmentIndex];
