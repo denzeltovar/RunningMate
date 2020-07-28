@@ -20,7 +20,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
 @property (strong, nonatomic) NSDateFormatter *dateFormatter2;
-@property (strong, nonatomic) NSMutableArray *datesWithEvent;
+@property (strong, nonatomic) NSMutableArray *eventFromDate;
+@property (strong, nonatomic) NSString *objectId;
 
 @end
 
@@ -39,7 +40,6 @@
         self.dateFormatter2 = [[NSDateFormatter alloc] init];
         self.dateFormatter2.dateFormat = @"yyyy-MM-dd HH:mm:ss Z";
     }
-    
     return self;
 }
 
@@ -66,7 +66,7 @@
     
     [eventsQuery findObjectsInBackgroundWithBlock:^(NSArray<WorkoutEvent *> * _Nullable events, NSError * _Nullable error) {
         if (events && events.count != 0) {
-            self.datesWithEvent = (NSMutableArray *) events;
+            self.eventFromDate = (NSMutableArray *) events;
             [self.tableView reloadData];
         }
     }];
@@ -80,7 +80,7 @@
 
 - (NSInteger)calendar:(FSCalendar *)calendar numberOfEventsForDate:(NSDate *)date {
     NSString *currentDate = [self.dateFormatter stringFromDate:date];
-    if ([self.datesWithEvent containsObject:currentDate]) {
+    if ([self.eventFromDate containsObject:currentDate]) {
         return 1;
     }
     return 0;}
@@ -98,20 +98,34 @@
 #pragma mark - <UITableViewDataSource>
 
 - (nonnull UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
     WorkoutCell *cell =[tableView dequeueReusableCellWithIdentifier:@"WorkoutCell"];
-    WorkoutEvent *workout = self.datesWithEvent[indexPath.row];
+    WorkoutEvent *workout = self.eventFromDate[indexPath.row];
     NSDate *eventDate = workout.dateOfWorkout;
     NSString *eventDateString = [_dateFormatter stringFromDate:eventDate];
     cell.eventDateLabel.text = eventDateString;
     cell.eventWorkoutLabel.text = [NSString stringWithFormat:@"Todays workout will consist of running %@ meters", workout.workout];
     cell.didFinishWorkoutSwitch.on = workout.didFinishWorkout;
+    self.objectId = workout.objectId;
     [cell.didFinishWorkoutSwitch addTarget:self action:@selector(didTapSwitch:) forControlEvents:UIControlEventValueChanged];
     return cell;
 }
 
 - (IBAction)didTapSwitch:(id)sender {
+    UISwitch* workoutSwitch = sender;
+    int didFinishWorkoutSwitch = 0;
+    if (workoutSwitch.on == 0) {
+        didFinishWorkoutSwitch = 0;
+    }else {
+        didFinishWorkoutSwitch = 1;
+    }
     
+    PFQuery *query = [PFQuery queryWithClassName:@"WorkoutEvent"];
+       [query getObjectInBackgroundWithId:self.objectId block:^(PFObject *workout, NSError *error) {
+           if (!error) {
+               workout[@"didFinishWorkout"] = @(didFinishWorkoutSwitch);
+               [workout saveInBackground];
+           }
+       }];
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
