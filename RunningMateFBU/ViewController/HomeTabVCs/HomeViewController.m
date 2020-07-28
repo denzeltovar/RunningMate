@@ -23,6 +23,8 @@
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
 @property (strong, nonatomic) NSMutableArray *allEvents;
 @property (strong, nonatomic) NSString *amountOfWorkoutsCompletedString;
+@property (weak, nonatomic) IBOutlet UILabel *amountOfWorkoutsLeftLabel;
+@property (strong, nonatomic) NSString *amountOfWorkoutsLeftString;
 @property (weak, nonatomic) IBOutlet UILabel *amountOfWorkoutsCompletedLabel;
 @end
 
@@ -35,6 +37,7 @@
     [self updateHomeView];
     [self updateActivity];
     [self fetchUserProfile];
+    [self amountOfWorkoutsRemaining];
 }
 
 -(void)fetchUserProfile{
@@ -47,6 +50,7 @@
             self.profileImage.file = self.userProfile.image;
             self.personalMessageLabel.text = self.userProfile.personalMessage;
             self.usernameLabel.text = [PFUser currentUser].username;
+            self.amountOfWorkoutsLeftLabel.text = self.amountOfWorkoutsLeftString;
             [self.profileImage loadInBackground];
         }
     }];
@@ -69,11 +73,29 @@
     }];
 }
 
-
--(void)updateActivity{
+-(void)amountOfWorkoutsRemaining{
+    
+    NSDate *today = [NSDate date];
     PFQuery *eventsQuery = [PFQuery queryWithClassName:@"WorkoutEvent"];
     [eventsQuery orderByAscending:@"dateOfWorkout"];
-    [eventsQuery whereKeyExists:@"dateOfWorkout"];
+    [eventsQuery whereKey:@"dateOfWorkout" greaterThanOrEqualTo:today];
+    [eventsQuery findObjectsInBackgroundWithBlock:^(NSArray* events, NSError *error) {
+        if (events && events.count != 0) {
+            int amountOfworkoutsRemaining = 0;
+            for (PFObject *event in events){
+                amountOfworkoutsRemaining = amountOfworkoutsRemaining + 1;
+            }
+            self.amountOfWorkoutsLeftString = [NSString stringWithFormat:@"You have a total of %d workouts remaining" ,amountOfworkoutsRemaining];
+        }
+    }];    
+}
+
+
+-(void)updateActivity{
+    NSDate *today = [NSDate date];
+    PFQuery *eventsQuery = [PFQuery queryWithClassName:@"WorkoutEvent"];
+    [eventsQuery orderByAscending:@"dateOfWorkout"];
+    [eventsQuery whereKey:@"dateOfWorkout" lessThanOrEqualTo:today];
     [eventsQuery findObjectsInBackgroundWithBlock:^(NSArray <WorkoutEvent *> * _Nullable events, NSError * _Nullable error) {
         if (events && events.count != 0) {
             self.allEvents = (NSMutableArray *) events;

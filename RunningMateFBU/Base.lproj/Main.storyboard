@@ -376,8 +376,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1/5 workouts completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8j-Wx-7Yr">
-                                <rect key="frame" x="81" y="493" width="202" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1/5 workouts completed" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8j-Wx-7Yr">
+                                <rect key="frame" x="35" y="493" width="277" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -403,9 +403,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="RRe-K6-gwC"/>
                     <connections>
+                        <outlet property="amountOfWorkoutsCompletedLabel" destination="GFc-je-re4" id="Hr6-jW-KeA"/>
+                        <outlet property="amountOfWorkoutsLeftLabel" destination="w8j-Wx-7Yr" id="Gl8-eN-Y4P"/>
                         <outlet property="personalMessageLabel" destination="8Hr-Lr-oq9" id="b3M-z1-CB2"/>
                         <outlet property="profileImage" destination="3Og-bP-kSL" id="Ede-cC-sBw"/>
-                        <outlet property="totalAmountOfWorkoutsCompletedLabel" destination="GFc-je-re4" id="6z0-WL-Mzi"/>
                         <outlet property="totalMilesRanLabel" destination="cmT-gs-4di" id="TTI-bm-iPr"/>
                         <outlet property="upcomingWorkout" destination="ALh-sW-oh0" id="Srf-Jb-cjY"/>
                         <outlet property="upcomingWorkoutDate" destination="JUk-ms-g7l" id="5bz-FB-t94"/>
