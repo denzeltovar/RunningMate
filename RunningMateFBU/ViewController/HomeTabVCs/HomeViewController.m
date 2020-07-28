@@ -9,23 +9,27 @@
 #import "HomeViewController.h"
 #import "UserProfile.h"
 #import <Parse/Parse.h>
+#import "WorkoutEvent.h"
 
 @import Parse;
 
 @interface HomeViewController ()
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *currentDayTimestampLabel;
-@property (weak, nonatomic) IBOutlet UILabel *currentDayWorkoutLabel;
+@property (weak, nonatomic) IBOutlet UILabel *upcomingWorkoutDate;
+@property (weak, nonatomic) IBOutlet UILabel *upcomingWorkout;
 @property (weak, nonatomic) IBOutlet UILabel *totalMilesRanLabel;
 @property (weak, nonatomic) IBOutlet UILabel *personalMessageLabel;
-
+@property (strong, nonatomic) NSDateFormatter *dateFormatter;
 @end
 
 @implementation HomeViewController
 
 - (void)viewDidLoad {
+    self.dateFormatter = [[NSDateFormatter alloc] init];
+    self.dateFormatter.dateFormat = @"EEEE, MMM d, yyyy";
     [super viewDidLoad];
+    [self updateOverView];
     [self fetchUserProfile];
 }
 
@@ -38,7 +42,24 @@
             self.userProfile = userProfile[0];
             self.profileImage.file = self.userProfile.image;
             self.personalMessageLabel.text = self.userProfile.personalMessage;
+            self.usernameLabel.text = [PFUser currentUser].username;
             [self.profileImage loadInBackground];
+        }
+    }];
+}
+
+-(void)updateOverView{
+    NSDate *today = [NSDate date];
+    PFQuery *eventsQuery = [PFQuery queryWithClassName:@"WorkoutEvent"];
+    [eventsQuery orderByAscending:@"dateOfWorkout"];
+    [eventsQuery whereKey:@"dateOfWorkout" greaterThanOrEqualTo:today];
+    eventsQuery.limit = 1;
+    [eventsQuery findObjectsInBackgroundWithBlock:^(NSArray* events, NSError *error) {
+        if (events && events.count != 0) {
+            WorkoutEvent *workout = events.firstObject;
+            self.upcomingWorkout.text = [NSString stringWithFormat:@"Upcoming workout will consist of running %@ meters!", workout.workout];
+            NSString *upcomingEventDate = [self.dateFormatter stringFromDate:workout.dateOfWorkout];
+            self.upcomingWorkoutDate.text = [ @"Upcoming event is on," stringByAppendingString:upcomingEventDate];
         }
     }];
 }

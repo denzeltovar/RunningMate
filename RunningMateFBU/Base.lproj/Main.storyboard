@@ -106,13 +106,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ej4-A2-aiW">
-                                <rect key="frame" x="88" y="372" width="239" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" name="Tint"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJ6-Bf-ze3">
                                 <rect key="frame" x="88" y="560" width="239" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -152,7 +145,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="TUc-Fe-YqX"/>
                     <connections>
-                        <outlet property="fullNameTextField" destination="ej4-A2-aiW" id="IIu-Tk-Dhy"/>
                         <outlet property="passwordTextField" destination="8iP-7w-NLE" id="SeR-qQ-sH2"/>
                         <outlet property="usernameTextField" destination="KWv-t9-sTG" id="zNr-mK-uui"/>
                     </connections>
@@ -169,11 +161,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zlS-ET-Y2A" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="56" width="414" height="375"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="zlS-ET-Y2A" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="56" width="414" height="339"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="375" id="0KW-YI-hzZ"/>
+                                    <constraint firstAttribute="height" constant="339" id="0KW-YI-hzZ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="firstWeekday">
@@ -183,20 +174,34 @@
                                         <real key="value" value="-1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="weekdayHeight">
-                                        <real key="value" value="22"/>
+                                        <real key="value" value="-1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="titleTextSize">
-                                        <real key="value" value="0.0"/>
+                                        <real key="value" value="17"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="subtitleTextSize">
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="weekdayTextSize">
-                                        <real key="value" value="0.0"/>
+                                        <real key="value" value="16"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="headerTitleTextSize">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
                                         <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsBoundingRectWhenChangingMonths" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fakedSelectedDay">
+                                        <integer key="value" value="-1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="headerMinimumDissolvedAlpha">
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -204,8 +209,8 @@
                                     <outlet property="delegate" destination="DWO-wb-c5b" id="k7P-Tu-Wdz"/>
                                 </connections>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="239" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b1r-lv-B4q">
-                                <rect key="frame" x="0.0" y="476" width="414" height="366"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="239" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b1r-lv-B4q">
+                                <rect key="frame" x="0.0" y="403" width="414" height="439"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutCell" rowHeight="239" id="z6c-ce-oNh" customClass="WorkoutCell">
@@ -222,13 +227,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Workout Plan:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lj-hJ-wGt">
-                                                    <rect key="frame" x="20" y="40" width="359" height="114"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Did you complete todays workout?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qN1-cB-eyI">
                                                     <rect key="frame" x="20" y="162" width="264" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -236,17 +234,24 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xeh-Z5-thn">
-                                                    <rect key="frame" x="345" y="162" width="49" height="31"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="x35-D5-P6H">
+                                                    <rect key="frame" x="330" y="162" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
-                                                        <action selector="didTapSwitch:" destination="DWO-wb-c5b" eventType="valueChanged" id="bso-31-oSz"/>
+                                                        <action selector="didTapSwitch:" destination="DWO-wb-c5b" eventType="valueChanged" id="gAH-8u-83c"/>
                                                     </connections>
                                                 </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Workout Plan:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lj-hJ-wGt">
+                                                    <rect key="frame" x="20" y="40" width="359" height="114"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="didFinishWorkoutSwitch" destination="xeh-Z5-thn" id="JVj-Z5-OvK"/>
+                                            <outlet property="didFinishWorkoutSwitch" destination="x35-D5-P6H" id="AcD-z5-wtM"/>
                                             <outlet property="eventDateLabel" destination="cmj-Na-Ob5" id="laN-Ye-SZh"/>
                                             <outlet property="eventWorkoutLabel" destination="2Lj-hJ-wGt" id="wXD-tX-aco"/>
                                         </connections>
@@ -261,7 +266,7 @@
                             <constraint firstItem="zlS-ET-Y2A" firstAttribute="trailing" secondItem="iwR-HQ-quv" secondAttribute="trailing" id="Wb5-rn-7fq"/>
                             <constraint firstAttribute="bottom" secondItem="b1r-lv-B4q" secondAttribute="bottom" id="aNL-Gv-Xdv"/>
                             <constraint firstItem="zlS-ET-Y2A" firstAttribute="top" secondItem="iwR-HQ-quv" secondAttribute="top" id="hN7-2z-7Cz"/>
-                            <constraint firstItem="b1r-lv-B4q" firstAttribute="top" secondItem="zlS-ET-Y2A" secondAttribute="bottom" constant="45" id="m7B-Kw-OTK"/>
+                            <constraint firstItem="b1r-lv-B4q" firstAttribute="top" secondItem="zlS-ET-Y2A" secondAttribute="bottom" constant="8" id="m7B-Kw-OTK"/>
                             <constraint firstItem="b1r-lv-B4q" firstAttribute="trailing" secondItem="zlS-ET-Y2A" secondAttribute="trailing" id="yQR-jW-yhM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iwR-HQ-quv"/>
@@ -296,15 +301,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Today's Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUk-ms-g7l">
-                                <rect key="frame" x="38" y="288" width="99" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Today's Workout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALh-sW-oh0">
-                                <rect key="frame" x="38" y="341" width="128" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upcoming Workout Date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JUk-ms-g7l">
+                                <rect key="frame" x="20" y="288" width="374" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -324,10 +322,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Evk-tI-elz">
-                                <rect key="frame" x="118" y="499" width="150" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Mileage Ran" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdg-ns-GPZ">
                                 <rect key="frame" x="35" y="643" width="135" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -335,10 +329,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="alx-nJ-Yzn">
-                                <rect key="frame" x="118" y="600" width="150" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Percantage of workout completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sga-om-F8u">
                                 <rect key="frame" x="35" y="534" width="259" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -372,8 +362,8 @@
                                     <segue destination="o6V-FK-iRM" kind="show" identifier="updateProfileSegue" id="cMj-Wb-Cgz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Plan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnX-os-XWw">
-                                <rect key="frame" x="142" y="248" width="127" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upcoming Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnX-os-XWw">
+                                <rect key="frame" x="142" y="248" width="170" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -386,23 +376,44 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1/5 workouts completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8j-Wx-7Yr">
+                                <rect key="frame" x="81" y="493" width="202" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have completed X% of workouts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFc-je-re4">
+                                <rect key="frame" x="81" y="588" width="279" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upcoming Workout" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALh-sW-oh0">
+                                <rect key="frame" x="20" y="341" width="348" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Sq8-4Y-oVG"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="RRe-K6-gwC"/>
                     <connections>
-                        <outlet property="currentDayTimestampLabel" destination="JUk-ms-g7l" id="9eL-4j-uCg"/>
-                        <outlet property="currentDayWorkoutLabel" destination="ALh-sW-oh0" id="wgj-Uh-rNb"/>
                         <outlet property="personalMessageLabel" destination="8Hr-Lr-oq9" id="b3M-z1-CB2"/>
                         <outlet property="profileImage" destination="3Og-bP-kSL" id="Ede-cC-sBw"/>
                         <outlet property="totalMilesRanLabel" destination="cmT-gs-4di" id="TTI-bm-iPr"/>
+                        <outlet property="upcomingWorkout" destination="ALh-sW-oh0" id="Srf-Jb-cjY"/>
+                        <outlet property="upcomingWorkoutDate" destination="JUk-ms-g7l" id="5bz-FB-t94"/>
                         <outlet property="usernameLabel" destination="Gll-ET-8oF" id="D6d-jn-COO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oiW-jb-reM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1322" y="2015"/>
+            <point key="canvasLocation" x="1321.7391304347827" y="2014.9553571428571"/>
         </scene>
         <!--Update Profile View Controller-->
         <scene sceneID="O8u-ts-VKa">
@@ -608,19 +619,19 @@
                     </tabBar>
                     <connections>
                         <segue destination="8z4-s5-W8H" kind="relationship" relationship="viewControllers" id="shm-TN-mAs"/>
-                        <segue destination="SWi-O4-IRd" kind="relationship" relationship="viewControllers" id="xye-XL-Kou"/>
                         <segue destination="28q-fr-qJg" kind="relationship" relationship="viewControllers" id="Jnp-Zv-P8k"/>
+                        <segue destination="SWi-O4-IRd" kind="relationship" relationship="viewControllers" id="xye-XL-Kou"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V5O-qK-U6p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1322" y="104"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="dCr-78-8UW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8z4-s5-W8H" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="house" catalog="system" id="ldz-35-Uyy"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="ldz-35-Uyy"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="lm7-wt-Fzj"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cgu-3Q-8CL">
@@ -736,7 +747,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="About Text Here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHl-Tp-cyM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHl-Tp-cyM">
                                 <rect key="frame" x="20" y="168" width="358" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -753,11 +764,11 @@
             </objects>
             <point key="canvasLocation" x="4635" y="808"/>
         </scene>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="EW0-uL-tEX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SWi-O4-IRd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="gear" catalog="system" id="Oyc-pF-82s"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="Oyc-pF-82s"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j7h-5O-COI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -791,11 +802,11 @@
             </objects>
             <point key="canvasLocation" x="1322" y="2778"/>
         </scene>
-        <!--Item-->
+        <!--Calendar-->
         <scene sceneID="mgB-Pk-Hfj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="28q-fr-qJg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="calendar" catalog="system" id="swj-ad-WEl"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="swj-ad-WEl"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uDG-UE-WIu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
@@ -813,7 +824,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="6xe-Kt-LSy"/>
-        <segue reference="vo3-i1-5vM"/>
+        <segue reference="q8G-zK-cbv"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>
