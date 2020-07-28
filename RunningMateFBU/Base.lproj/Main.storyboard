@@ -383,8 +383,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have completed X% of workouts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFc-je-re4">
-                                <rect key="frame" x="81" y="588" width="279" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have completed X% of workouts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFc-je-re4">
+                                <rect key="frame" x="35" y="563" width="359" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -405,6 +405,7 @@
                     <connections>
                         <outlet property="personalMessageLabel" destination="8Hr-Lr-oq9" id="b3M-z1-CB2"/>
                         <outlet property="profileImage" destination="3Og-bP-kSL" id="Ede-cC-sBw"/>
+                        <outlet property="totalAmountOfWorkoutsCompletedLabel" destination="GFc-je-re4" id="6z0-WL-Mzi"/>
                         <outlet property="totalMilesRanLabel" destination="cmT-gs-4di" id="TTI-bm-iPr"/>
                         <outlet property="upcomingWorkout" destination="ALh-sW-oh0" id="Srf-Jb-cjY"/>
                         <outlet property="upcomingWorkoutDate" destination="JUk-ms-g7l" id="5bz-FB-t94"/>

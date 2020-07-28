@@ -120,12 +120,12 @@
     }
     
     PFQuery *query = [PFQuery queryWithClassName:@"WorkoutEvent"];
-       [query getObjectInBackgroundWithId:self.objectId block:^(PFObject *workout, NSError *error) {
-           if (!error) {
-               workout[@"didFinishWorkout"] = @(didFinishWorkoutSwitch);
-               [workout saveInBackground];
-           }
-       }];
+    [query getObjectInBackgroundWithId:self.objectId block:^(PFObject *workout, NSError *error) {
+        if (!error) {
+            workout[@"didFinishWorkout"] = @(didFinishWorkoutSwitch);
+            [workout saveInBackground];
+        }
+    }];
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

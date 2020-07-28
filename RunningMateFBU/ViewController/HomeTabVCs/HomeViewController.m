@@ -21,6 +21,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalMilesRanLabel;
 @property (weak, nonatomic) IBOutlet UILabel *personalMessageLabel;
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
+@property (strong, nonatomic) NSMutableArray *allEvents;
+@property (strong, nonatomic) NSString *amountOfWorkoutsCompletedString;
+@property (weak, nonatomic) IBOutlet UILabel *amountOfWorkoutsCompletedLabel;
 @end
 
 @implementation HomeViewController
@@ -29,7 +32,8 @@
     self.dateFormatter = [[NSDateFormatter alloc] init];
     self.dateFormatter.dateFormat = @"EEEE, MMM d, yyyy";
     [super viewDidLoad];
-    [self updateOverView];
+    [self updateHomeView];
+    [self updateActivity];
     [self fetchUserProfile];
 }
 
@@ -48,7 +52,7 @@
     }];
 }
 
--(void)updateOverView{
+-(void)updateHomeView{
     NSDate *today = [NSDate date];
     PFQuery *eventsQuery = [PFQuery queryWithClassName:@"WorkoutEvent"];
     [eventsQuery orderByAscending:@"dateOfWorkout"];
@@ -60,6 +64,28 @@
             self.upcomingWorkout.text = [NSString stringWithFormat:@"Upcoming workout will consist of running %@ meters!", workout.workout];
             NSString *upcomingEventDate = [self.dateFormatter stringFromDate:workout.dateOfWorkout];
             self.upcomingWorkoutDate.text = [ @"Upcoming event is on," stringByAppendingString:upcomingEventDate];
+            self.amountOfWorkoutsCompletedLabel.text = self.amountOfWorkoutsCompletedString;
+        }
+    }];
+}
+
+
+-(void)updateActivity{
+    PFQuery *eventsQuery = [PFQuery queryWithClassName:@"WorkoutEvent"];
+    [eventsQuery orderByAscending:@"dateOfWorkout"];
+    [eventsQuery whereKeyExists:@"dateOfWorkout"];
+    [eventsQuery findObjectsInBackgroundWithBlock:^(NSArray <WorkoutEvent *> * _Nullable events, NSError * _Nullable error) {
+        if (events && events.count != 0) {
+            self.allEvents = (NSMutableArray *) events;
+            int finishedWorkoutsCounter = 0;
+            for (PFObject *event in self.allEvents) {
+                NSNumber *didFinishWorkout = [event valueForKey:@"didFinishWorkout"];
+                if (didFinishWorkout == [NSNumber numberWithUnsignedShort:1]){
+                    finishedWorkoutsCounter = finishedWorkoutsCounter + 1;
+                }
+            }
+            NSInteger totalAmountOfWorkouts = events.count;
+            self.amountOfWorkoutsCompletedString = [NSString stringWithFormat:@"You have completed %ld / %ld of your total workouts!",(long)finishedWorkoutsCounter, (long)totalAmountOfWorkouts];
         }
     }];
 }
