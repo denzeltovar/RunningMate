@@ -26,6 +26,18 @@
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
         if (error == nil) {
             [self performSegueWithIdentifier:@"homeViewSegue" sender:nil];
+        } else {
+            UIAlertController * alert = [UIAlertController
+                                         alertControllerWithTitle:@"Invalid Credentials"
+                                         message:@"Please enter valid credentials"
+                                         preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction* ok = [UIAlertAction
+                                         actionWithTitle:@"A-OK!"
+                                         style:UIAlertActionStyleDefault
+                                         handler:^(UIAlertAction * action) {
+            }];
+            [alert addAction:ok];
+            [self presentViewController:alert animated:YES completion:nil];
         }
     }];
 }
