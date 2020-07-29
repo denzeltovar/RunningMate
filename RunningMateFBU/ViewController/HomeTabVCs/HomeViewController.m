@@ -18,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *upcomingWorkoutDate;
 @property (weak, nonatomic) IBOutlet UILabel *upcomingWorkout;
-@property (weak, nonatomic) IBOutlet UILabel *totalMilesRanLabel;
 @property (weak, nonatomic) IBOutlet UILabel *personalMessageLabel;
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
 @property (strong, nonatomic) NSMutableArray *allEvents;
