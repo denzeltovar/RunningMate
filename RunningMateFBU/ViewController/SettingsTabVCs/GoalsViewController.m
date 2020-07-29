@@ -44,7 +44,7 @@
     [super viewDidLoad];
 }
 
--(void)updateWorkoutPlan {
+-(void)deleteUpcomingEvents{
     NSDate *today = [NSDate date];
     PFQuery *updateQuery = [PFQuery queryWithClassName:@"WorkoutEvent"];
     [updateQuery whereKey:@"dateOfWorkout" greaterThanOrEqualTo:today];
@@ -84,7 +84,7 @@
 }
 
 - (IBAction)didTapConfirmGoals:(id)sender {
-    [self updateWorkoutPlan];
+    [self deleteUpcomingEvents];
     NSInteger distanceSegmentIndex = [self.distanceSegmentedControl selectedSegmentIndex];
     NSInteger timeFrameSegmentIndex = [self.timeFrameSegmentedControl selectedSegmentIndex];
     NSInteger timeOfWorkoutSegmentIndex = [self.timeOfWorkoutSegmentedControl selectedSegmentIndex];

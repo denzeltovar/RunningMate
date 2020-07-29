@@ -112,17 +112,10 @@
 
 - (IBAction)didTapSwitch:(id)sender {
     UISwitch* workoutSwitch = sender;
-    int didFinishWorkoutSwitch = 0;
-    if (workoutSwitch.on == 0) {
-        didFinishWorkoutSwitch = 0;
-    }else {
-        didFinishWorkoutSwitch = 1;
-    }
-    
     PFQuery *query = [PFQuery queryWithClassName:@"WorkoutEvent"];
     [query getObjectInBackgroundWithId:self.objectId block:^(PFObject *workout, NSError *error) {
         if (!error) {
-            workout[@"didFinishWorkout"] = @(didFinishWorkoutSwitch);
+            workout[@"didFinishWorkout"] = workoutSwitch.on ? @(1) : @(0);;
             [workout saveInBackground];
         }
     }];
