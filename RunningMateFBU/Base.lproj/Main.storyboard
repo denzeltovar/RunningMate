@@ -663,8 +663,8 @@
                                         <color key="textColor" name="Tint"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Percantage of workout completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sga-om-F8u">
-                                        <rect key="frame" x="8" y="116" width="251" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Percantage of workout completed" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sga-om-F8u">
+                                        <rect key="frame" x="8" y="116" width="351" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="Secondary Color"/>
@@ -734,11 +734,8 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
                                         <real key="value" value="0.69999999999999996"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowRadius">
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffsrt">
                                         <size key="value" width="3" height="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
-                                        <real key="value" value="0.69999999999999996"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
@@ -1354,7 +1351,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="cMj-Wb-Cgz"/>
-        <segue reference="vRr-6U-A4N"/>
+        <segue reference="6xe-Kt-LSy"/>
         <segue reference="vo3-i1-5vM"/>
     </inferredMetricsTieBreakers>
     <resources>

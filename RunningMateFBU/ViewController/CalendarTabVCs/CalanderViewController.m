@@ -22,6 +22,7 @@
 @property (strong, nonatomic) NSDateFormatter *dateFormatter2;
 @property (strong, nonatomic) NSMutableArray *eventFromDate;
 @property (strong, nonatomic) NSString *objectId;
+@property (strong, nonatomic) NSMutableArray* datesArray;
 
 @end
 
@@ -53,6 +54,8 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.datesArray = [[NSMutableArray alloc] init];
+    [self fetchEventsDotsForDates];
 }
 
 -(void)fetchEventsForDates:(NSDate *)date {
@@ -72,6 +75,20 @@
     }];
 }
 
+-(void)fetchEventsDotsForDates {
+    PFQuery *eventsQuery = [PFQuery queryWithClassName:@"WorkoutEvent"];
+    [eventsQuery orderByAscending:@"dateOfWorkout"];
+    [eventsQuery whereKeyExists:@"dateOfWorkout"];
+    NSArray *eventObjects = [eventsQuery findObjects];
+    if (eventObjects) {
+        for (WorkoutEvent *event in eventObjects){
+            NSString *dateString = [self.dateFormatter stringFromDate:event.dateOfWorkout];
+            [self.datesArray addObject:dateString];
+        }
+        [self.calendar reloadData];
+    }
+}
+
 - (void)dealloc {
     NSLog(@"%s",__FUNCTION__);
 }
@@ -79,11 +96,12 @@
 #pragma mark - <FSCalendarDataSource>
 
 - (NSInteger)calendar:(FSCalendar *)calendar numberOfEventsForDate:(NSDate *)date {
-    NSString *currentDate = [self.dateFormatter stringFromDate:date];
-    if ([self.eventFromDate containsObject:currentDate]) {
+    NSString *dateString = [self.dateFormatter stringFromDate:date];
+    if ([self.datesArray containsObject:dateString]) {
         return 1;
     }
-    return 0;}
+    return 0;
+}
 
 
 #pragma mark - <FSCalendarDelegate>
