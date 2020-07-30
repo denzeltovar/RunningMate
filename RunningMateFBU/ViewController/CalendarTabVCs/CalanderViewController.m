@@ -10,6 +10,7 @@
 #import "FSCalendar.h"
 #import "WorkoutCell.h"
 #import "WorkoutEvent.h"
+#import "LLSwitch.h"
 @import FSCalendar;
 @import Parse;
 

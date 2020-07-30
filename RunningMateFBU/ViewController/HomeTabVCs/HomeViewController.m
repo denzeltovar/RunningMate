@@ -115,5 +115,8 @@
     [self performSegueWithIdentifier:@"updateProfileSegue" sender:nil];
 }
 
+- (IBAction)longPressGesture:(id)sender {
+    [self performSegueWithIdentifier:@"updateProfileSegue" sender:nil];
+}
 
 @end

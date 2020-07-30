@@ -417,95 +417,77 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="zlS-ET-Y2A" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="56" width="414" height="339"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="339" id="0KW-YI-hzZ"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="firstWeekday">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="headerHeight">
-                                        <real key="value" value="-1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="weekdayHeight">
-                                        <real key="value" value="-1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="titleTextSize">
-                                        <real key="value" value="17"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="subtitleTextSize">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="weekdayTextSize">
-                                        <real key="value" value="16"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="headerTitleTextSize">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsBoundingRectWhenChangingMonths" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="fakedSelectedDay">
-                                        <integer key="value" value="-1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="headerMinimumDissolvedAlpha">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <outlet property="dataSource" destination="DWO-wb-c5b" id="FBW-vg-5Cj"/>
-                                    <outlet property="delegate" destination="DWO-wb-c5b" id="k7P-Tu-Wdz"/>
-                                </connections>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="239" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b1r-lv-B4q">
-                                <rect key="frame" x="0.0" y="403" width="414" height="439"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="409" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b1r-lv-B4q">
+                                <rect key="frame" x="0.0" y="359" width="414" height="483"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutCell" rowHeight="239" id="z6c-ce-oNh" customClass="WorkoutCell">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="239"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorkoutCell" rowHeight="409" id="z6c-ce-oNh" customClass="WorkoutCell">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="409"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z6c-ce-oNh" id="TMY-Of-TRy">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="239"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="409"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cell Date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmj-Na-Ob5">
-                                                    <rect key="frame" x="20" y="11" width="150" height="21"/>
+                                                <view contentMode="scaleToFill" id="D4F-Z4-m5u">
+                                                    <rect key="frame" x="12" y="11" width="390" height="184"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Did you complete todays workout?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qN1-cB-eyI">
-                                                    <rect key="frame" x="20" y="162" width="264" height="21"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cell Date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmj-Na-Ob5">
+                                                            <rect key="frame" x="11" y="24" width="150" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" name="Third Color"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Did you complete todays workout?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qN1-cB-eyI">
+                                                            <rect key="frame" x="11" y="133" width="264" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" name="Third Color"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Workout Plan:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lj-hJ-wGt">
+                                                            <rect key="frame" x="11" y="60" width="359" height="65"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" name="Third Color"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="x35-D5-P6H">
+                                                            <rect key="frame" x="311" y="128" width="49" height="31"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <connections>
+                                                                <action selector="didTapSwitch:" destination="DWO-wb-c5b" eventType="valueChanged" id="gAH-8u-83c"/>
+                                                            </connections>
+                                                        </switch>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                                            <size key="value" width="3" height="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                            <real key="value" value="0.69999999999999996"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="XxW-cD-YsW">
+                                                    <rect key="frame" x="87" y="203" width="240" height="142"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="x35-D5-P6H">
-                                                    <rect key="frame" x="330" y="162" width="49" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <connections>
-                                                        <action selector="didTapSwitch:" destination="DWO-wb-c5b" eventType="valueChanged" id="gAH-8u-83c"/>
-                                                    </connections>
-                                                </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Workout Plan:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Lj-hJ-wGt">
-                                                    <rect key="frame" x="20" y="40" width="359" height="114"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </imageView>
                                             </subviews>
+                                            <color key="backgroundColor" name="First Color"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Third Color"/>
                                         <connections>
                                             <outlet property="didFinishWorkoutSwitch" destination="x35-D5-P6H" id="AcD-z5-wtM"/>
                                             <outlet property="eventDateLabel" destination="cmj-Na-Ob5" id="laN-Ye-SZh"/>
@@ -514,23 +496,128 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O57-0W-4W1">
+                                <rect key="frame" x="8" y="20" width="398" height="331"/>
+                                <subviews>
+                                    <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="zlS-ET-Y2A" customClass="FSCalendar">
+                                        <rect key="frame" x="8" y="8" width="382" height="315"/>
+                                        <color key="backgroundColor" name="Backround Color"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="firstWeekday">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="headerHeight">
+                                                <real key="value" value="-1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="weekdayHeight">
+                                                <real key="value" value="-1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="titleTextSize">
+                                                <real key="value" value="17"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="subtitleTextSize">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="weekdayTextSize">
+                                                <real key="value" value="16"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="headerTitleTextSize">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="adjustsBoundingRectWhenChangingMonths" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="fakedSelectedDay">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="headerMinimumDissolvedAlpha">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="eventDefaultColor">
+                                                <color key="value" name="Accent"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="eventSelectionColor">
+                                                <color key="value" name="Third Color"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                                                <color key="value" name="Secondary Color"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="headerTitleColor">
+                                                <color key="value" name="First Color"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="titleTodayColor">
+                                                <color key="value" name="Accent"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="titleDefaultColor">
+                                                <color key="value" name="Accent"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="titleSelectionColor">
+                                                <color key="value" name="Secondary Color"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="titlePlaceholderColor">
+                                                <color key="value" name="Third Color"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                                                <color key="value" name="Third Color"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderSelectionColor">
+                                                <color key="value" name="Secondary Color"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="DWO-wb-c5b" id="FBW-vg-5Cj"/>
+                                            <outlet property="delegate" destination="DWO-wb-c5b" id="k7P-Tu-Wdz"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="zlS-ET-Y2A" secondAttribute="bottom" constant="8" id="QZr-VC-4Wm"/>
+                                    <constraint firstAttribute="height" constant="331" id="hbS-Hv-ViX"/>
+                                    <constraint firstAttribute="trailing" secondItem="zlS-ET-Y2A" secondAttribute="trailing" constant="8" id="i42-3f-8ZL"/>
+                                    <constraint firstItem="zlS-ET-Y2A" firstAttribute="top" secondItem="O57-0W-4W1" secondAttribute="topMargin" id="ode-kz-dKb"/>
+                                    <constraint firstItem="zlS-ET-Y2A" firstAttribute="leading" secondItem="O57-0W-4W1" secondAttribute="leading" constant="8" id="tcq-dO-Luq"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                        <real key="value" value="0.69999999999999996"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                        <size key="value" width="3" height="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="Third Color"/>
                         <constraints>
-                            <constraint firstItem="b1r-lv-B4q" firstAttribute="leading" secondItem="zlS-ET-Y2A" secondAttribute="leading" id="3S1-ij-o4q"/>
-                            <constraint firstItem="zlS-ET-Y2A" firstAttribute="leading" secondItem="iwR-HQ-quv" secondAttribute="leading" id="OVY-SI-YX6"/>
-                            <constraint firstItem="zlS-ET-Y2A" firstAttribute="trailing" secondItem="iwR-HQ-quv" secondAttribute="trailing" id="Wb5-rn-7fq"/>
+                            <constraint firstItem="O57-0W-4W1" firstAttribute="top" secondItem="8ja-XQ-qg0" secondAttribute="top" constant="20" symbolic="YES" id="Hwf-9L-3pG"/>
+                            <constraint firstItem="O57-0W-4W1" firstAttribute="trailing" secondItem="iwR-HQ-quv" secondAttribute="trailing" constant="-8" id="Tnb-mq-Yt2"/>
                             <constraint firstAttribute="bottom" secondItem="b1r-lv-B4q" secondAttribute="bottom" id="aNL-Gv-Xdv"/>
-                            <constraint firstItem="zlS-ET-Y2A" firstAttribute="top" secondItem="iwR-HQ-quv" secondAttribute="top" id="hN7-2z-7Cz"/>
-                            <constraint firstItem="b1r-lv-B4q" firstAttribute="top" secondItem="zlS-ET-Y2A" secondAttribute="bottom" constant="8" id="m7B-Kw-OTK"/>
-                            <constraint firstItem="b1r-lv-B4q" firstAttribute="trailing" secondItem="zlS-ET-Y2A" secondAttribute="trailing" id="yQR-jW-yhM"/>
+                            <constraint firstItem="b1r-lv-B4q" firstAttribute="top" secondItem="O57-0W-4W1" secondAttribute="bottom" constant="8" id="dl3-x1-rHG"/>
+                            <constraint firstItem="b1r-lv-B4q" firstAttribute="leading" secondItem="iwR-HQ-quv" secondAttribute="leading" id="gVT-lj-Luu"/>
+                            <constraint firstItem="O57-0W-4W1" firstAttribute="leading" secondItem="8ja-XQ-qg0" secondAttribute="leading" constant="8" id="oG9-fi-oH6"/>
+                            <constraint firstItem="b1r-lv-B4q" firstAttribute="centerX" secondItem="8ja-XQ-qg0" secondAttribute="centerX" id="wgK-kg-eqG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iwR-HQ-quv"/>
                     </view>
                     <navigationItem key="navigationItem" title="Calander" id="gDv-dQ-JyT"/>
                     <connections>
                         <outlet property="calendar" destination="zlS-ET-Y2A" id="ptk-g3-edM"/>
-                        <outlet property="calendarHeightConstraint" destination="0KW-YI-hzZ" id="i3W-u5-Fez"/>
                         <outlet property="tableView" destination="b1r-lv-B4q" id="Zik-CO-wZg"/>
                     </connections>
                 </viewController>
@@ -621,6 +708,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="158" id="hu7-Fq-Ta2"/>
                                 </constraints>
@@ -720,8 +808,9 @@
                                     <segue destination="o6V-FK-iRM" kind="show" identifier="updateProfileSegue" id="cMj-Wb-Cgz"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blue Profile Icon" translatesAutoresizingMaskIntoConstraints="NO" id="3Og-bP-kSL" customClass="PFImageView">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blue Profile Icon" translatesAutoresizingMaskIntoConstraints="NO" id="3Og-bP-kSL" customClass="PFImageView">
                                 <rect key="frame" x="16" y="142" width="150" height="150"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="aTz-l3-RPH"/>
                                     <constraint firstAttribute="height" constant="150" id="cMi-uy-Yx7"/>
@@ -738,9 +827,13 @@
                                         <size key="value" width="3" height="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="RS5-o1-UaU" appends="YES" id="ZMd-0c-7Vd"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray3Color" red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="mQx-dj-qAy" firstAttribute="top" secondItem="Q76-sD-yq9" secondAttribute="bottom" constant="8" id="2RO-kj-NNs"/>
                             <constraint firstItem="Sq8-4Y-oVG" firstAttribute="trailing" secondItem="mQx-dj-qAy" secondAttribute="trailing" constant="16" id="3rg-tp-8az"/>
@@ -771,9 +864,15 @@
                         <outlet property="upcomingWorkout" destination="ALh-sW-oh0" id="Srf-Jb-cjY"/>
                         <outlet property="upcomingWorkoutDate" destination="JUk-ms-g7l" id="5bz-FB-t94"/>
                         <outlet property="usernameLabel" destination="Gll-ET-8oF" id="D6d-jn-COO"/>
+                        <segue destination="DWO-wb-c5b" kind="show" identifier="calendarSegue" id="E6l-My-Fq8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oiW-jb-reM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="RS5-o1-UaU">
+                    <connections>
+                        <action selector="longPressGesture:" destination="BGe-8a-UCp" id="caV-hH-SfG"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1321.7391304347827" y="2014.9553571428571"/>
         </scene>
@@ -1335,6 +1434,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="28q-fr-qJg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Calendar" image="calendar" catalog="system" id="swj-ad-WEl"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="y6C-f9-9lI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uDG-UE-WIu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1351,8 +1451,9 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="cMj-Wb-Cgz"/>
-        <segue reference="6xe-Kt-LSy"/>
+        <segue reference="vRr-6U-A4N"/>
         <segue reference="vo3-i1-5vM"/>
+        <segue reference="E6l-My-Fq8"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="BLue Running Man" width="296" height="296"/>
