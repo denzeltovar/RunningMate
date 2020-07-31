@@ -485,6 +485,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" name="Third Color"/>
                                         <connections>
+                                            <outlet property="didFinishWorkoutLabel" destination="qN1-cB-eyI" id="Irc-wm-eUe"/>
                                             <outlet property="didFinishWorkoutSwitch" destination="x35-D5-P6H" id="AcD-z5-wtM"/>
                                             <outlet property="eventDateLabel" destination="cmj-Na-Ob5" id="laN-Ye-SZh"/>
                                             <outlet property="eventWorkoutLabel" destination="2Lj-hJ-wGt" id="wXD-tX-aco"/>

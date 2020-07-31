@@ -10,7 +10,6 @@
 #import "FSCalendar.h"
 #import "WorkoutCell.h"
 #import "WorkoutEvent.h"
-#import "LLSwitch.h"
 @import FSCalendar;
 @import Parse;
 
@@ -72,6 +71,9 @@
         if (events && events.count != 0) {
             self.eventFromDate = (NSMutableArray *) events;
             [self.tableView reloadData];
+        }else {
+            self.eventFromDate = nil;
+            [self.tableView reloadData];
         }
     }];
 }
@@ -123,9 +125,18 @@
     NSString *eventDateString = [_dateFormatter stringFromDate:eventDate];
     cell.eventDateLabel.text = eventDateString;
     cell.eventWorkoutLabel.text = [NSString stringWithFormat:@"Todays workout will consist of running %@ meters", workout.workout];
-    cell.didFinishWorkoutSwitch.on = workout.didFinishWorkout;
-    self.objectId = workout.objectId;
-    [cell.didFinishWorkoutSwitch addTarget:self action:@selector(didTapSwitch:) forControlEvents:UIControlEventValueChanged];
+    if (self.eventFromDate.count > 0) {
+        self.objectId = workout.objectId;
+        cell.didFinishWorkoutSwitch.hidden = NO;
+        cell.didFinishWorkoutLabel.text = @"Did you finish your workout?";
+        cell.didFinishWorkoutSwitch.on = workout.didFinishWorkout;
+        [cell.didFinishWorkoutSwitch addTarget:self action:@selector(didTapSwitch:) forControlEvents:UIControlEventValueChanged];
+    } else {
+        cell.eventDateLabel.text = nil;
+        cell.didFinishWorkoutSwitch.hidden = YES;
+        cell.eventWorkoutLabel.text = @"There is no event for today. Enjoy your rest day!";
+        cell.didFinishWorkoutLabel.text = nil;
+    }
     return cell;
 }
 

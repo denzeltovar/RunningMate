@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *eventDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *eventWorkoutLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *didFinishWorkoutSwitch;
+@property (weak, nonatomic) IBOutlet UILabel *didFinishWorkoutLabel;
 
 @end
 

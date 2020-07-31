@@ -10,7 +10,6 @@
 #import "UserProfile.h"
 #import <Parse/Parse.h>
 #import "WorkoutEvent.h"
-
 @import Parse;
 
 @interface HomeViewController ()
@@ -30,9 +29,10 @@
 @implementation HomeViewController
 
 - (void)viewDidLoad {
+    [super viewDidLoad];
     self.dateFormatter = [[NSDateFormatter alloc] init];
     self.dateFormatter.dateFormat = @"EEEE, MMM d, yyyy";
-    [super viewDidLoad];
+    [self reloadInputViews];
     [self updateHomeView];
     [self updateActivity];
     [self fetchUserProfile];
