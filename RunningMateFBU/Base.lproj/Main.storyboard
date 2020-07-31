@@ -131,7 +131,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <action selector="didTapLogin:" destination="p0M-6V-Mts" eventType="touchUpInside" id="ji9-E7-tAf"/>
+                                                            <action selector="didTapLogin:" destination="p0M-6V-Mts" eventType="touchUpInside" id="GcH-RB-Umf"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -335,8 +335,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="didTapRegister:" destination="4g6-Rp-w0F" eventType="touchUpInside" id="rAO-dy-Hob"/>
-                                                    <segue destination="b5q-bK-1eJ" kind="show" identifier="homeViewSegue2" id="6xe-Kt-LSy"/>
+                                                    <action selector="didTapRegister:" destination="4g6-Rp-w0F" eventType="touchUpInside" id="cZI-SH-npr"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -380,7 +379,7 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="didTapHaveAcount:" destination="4g6-Rp-w0F" eventType="touchUpInside" id="Mu2-4C-EXx"/>
-                                                            <segue destination="p0M-6V-Mts" kind="show" identifier="loginSegue" id="2Ii-Vs-wk0"/>
+                                                            <segue destination="p0M-6V-Mts" kind="showDetail" identifier="loginSegue" id="2Ii-Vs-wk0"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -478,11 +477,8 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="XxW-cD-YsW">
-                                                    <rect key="frame" x="87" y="203" width="240" height="142"/>
+                                                    <rect key="frame" x="87" y="228" width="240" height="142"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
-                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" name="First Color"/>
@@ -634,7 +630,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQx-dj-qAy">
-                                <rect key="frame" x="170" y="204" width="228" height="88"/>
+                                <rect key="frame" x="170" y="148" width="228" height="88"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gll-ET-8oF">
                                         <rect key="frame" x="6" y="8" width="214" height="27"/>
@@ -671,13 +667,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeView Background" translatesAutoresizingMaskIntoConstraints="NO" id="Q76-sD-yq9">
-                                <rect key="frame" x="0.0" y="56" width="414" height="140"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="EVr-13-CDC"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8a-fu-7c8">
-                                <rect key="frame" x="16" y="300" width="382" height="158"/>
+                                <rect key="frame" x="16" y="244" width="382" height="158"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upcoming Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnX-os-XWw">
                                         <rect key="frame" x="106" y="8" width="170" height="30"/>
@@ -728,7 +724,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7R3-yr-Fg4">
-                                <rect key="frame" x="16" y="474" width="382" height="226"/>
+                                <rect key="frame" x="16" y="418" width="382" height="226"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Activity" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zk9-dX-4wD">
                                         <rect key="frame" x="151" y="8" width="81" height="29"/>
@@ -792,7 +788,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42j-gF-Xln">
-                                <rect key="frame" x="16" y="716" width="382" height="30"/>
+                                <rect key="frame" x="16" y="660" width="382" height="30"/>
                                 <color key="backgroundColor" name="Third Color"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Update Profile Picture">
@@ -809,7 +805,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blue Profile Icon" translatesAutoresizingMaskIntoConstraints="NO" id="3Og-bP-kSL" customClass="PFImageView">
-                                <rect key="frame" x="16" y="142" width="150" height="150"/>
+                                <rect key="frame" x="16" y="86" width="150" height="150"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="aTz-l3-RPH"/>
@@ -1450,8 +1446,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cMj-Wb-Cgz"/>
-        <segue reference="vRr-6U-A4N"/>
         <segue reference="vo3-i1-5vM"/>
         <segue reference="E6l-My-Fq8"/>
     </inferredMetricsTieBreakers>

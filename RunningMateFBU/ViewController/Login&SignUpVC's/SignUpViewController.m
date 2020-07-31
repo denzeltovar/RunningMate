@@ -11,7 +11,6 @@
 @interface SignUpViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (weak, nonatomic) IBOutlet UITextField *fullNameTextField;
 @end
 
 @implementation SignUpViewController
@@ -19,17 +18,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
-
-- (IBAction)didTapRegister:(id)sender {
+- (void) registerAccount{
     PFUser *newUser = [PFUser user];
     newUser.username = self.usernameTextField.text;
     newUser.password = self.passwordTextField.text;
-    [newUser signUpInBackground];
-    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
-        if (error == nil){
-            [self performSegueWithIdentifier:@"homeViewSegue2" sender:nil];
+    [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if(succeeded){
+            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
         }
     }];
+}
+
+- (IBAction)didTapRegister:(id)sender {
+    if (self.usernameTextField.text.length > 3 && self.passwordTextField.text.length > 3 && self.usernameTextField.text.length < 12 && self.passwordTextField.text.length < 12){
+         [self registerAccount];
+    } else {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Invalid Credentials!" message:@"Username and Password must have at min of 3 characters and a max of 12." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [alert addAction:action];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 
 - (IBAction)didTapHaveAcount:(id)sender {
