@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "SCLAlertView.h"
 @import Parse;
 
 @interface LoginViewController ()
@@ -27,17 +28,10 @@
         if (error == nil) {
             [self performSegueWithIdentifier:@"homeViewSegue" sender:nil];
         } else {
-            UIAlertController * alert = [UIAlertController
-                                         alertControllerWithTitle:@"Invalid Credentials"
-                                         message:@"Please enter valid credentials"
-                                         preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction* ok = [UIAlertAction
-                                         actionWithTitle:@"A-OK!"
-                                         style:UIAlertActionStyleDefault
-                                         handler:^(UIAlertAction * action) {
-            }];
-            [alert addAction:ok];
-            [self presentViewController:alert animated:YES completion:nil];
+         SCLAlertView *alert = [[SCLAlertView alloc] init];
+         [alert showError:self title:@"Invalid Input"
+                 subTitle:@"Your input did not match with any users in our current database. Please make sure you have correctly inputted in your credentials. If you do not have an account you can register for an account by cliking sign up at the bottom of your sceen."
+         closeButtonTitle:@"OK" duration:0.0f];
         }
     }];
 }
@@ -45,6 +39,5 @@
 - (IBAction)didTapSignUp:(id)sender {
     [self performSegueWithIdentifier:@"signupSegue" sender:nil];
 }
-
 
 @end

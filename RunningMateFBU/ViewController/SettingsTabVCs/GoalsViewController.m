@@ -8,7 +8,7 @@
 
 #import "GoalsViewController.h"
 #import "WorkoutEvent.h"
-
+#import "SCLAlertView.h"
 
 @import Parse;
 
@@ -17,30 +17,11 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *timeFrameSegmentedControl;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *timeOfWorkoutSegmentedControl;
 @end
-
 @implementation GoalsViewController
 
 - (void)viewDidLoad {
-    UIAlertController * alert = [UIAlertController
-                                 alertControllerWithTitle:@"Warning"
-                                 message:@"If setting new goals, all future events will be removed and then updated with new preferences. Are you sure you want to continue?"
-                                 preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* updatePlan = [UIAlertAction
-                                 actionWithTitle:@"Yes"
-                                 style:UIAlertActionStyleDefault
-                                 handler:^(UIAlertAction * action) {
-    }];
-    UIAlertAction* cancel = [UIAlertAction
-                             actionWithTitle:@"Cancel"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }];
-    
-    [alert addAction:updatePlan];
-    [alert addAction:cancel];
-    
-    [self presentViewController:alert animated:YES completion:nil];
+    SCLAlertView *alert = [[SCLAlertView alloc] init];
+    [alert showWarning:self title:@"Warning" subTitle: @"By pressing OK you are aware that by creating a new workout plan all future events of your current plan will be deleted." closeButtonTitle:@"OK" duration:0.0f];
     [super viewDidLoad];
 }
 
