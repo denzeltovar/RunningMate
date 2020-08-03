@@ -10,9 +10,10 @@
 #import "UserProfile.h"
 #import <Parse/Parse.h>
 #import "WorkoutEvent.h"
+#import "UpdateProfileViewController.h"
 @import Parse;
 
-@interface HomeViewController ()
+@interface HomeViewController () <UpdateProfileDelegate>
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *upcomingWorkoutDate;
@@ -39,11 +40,15 @@
     [self amountOfWorkoutsRemaining];
 }
 
+//-(void)viewDidAppear:(BOOL)animated {
+//    [super viewDidAppear:YES];
+//    [self fetchUserProfile];
+//}
+
 -(void)fetchUserProfile{
     PFQuery *query = [PFQuery queryWithClassName:@"UserProfile"];
     [query whereKey:@"author" equalTo: [PFUser currentUser]];
     [query orderByDescending: @"updatedAt"];
-    [query whereKey:@"author" equalTo:[PFUser currentUser]];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable userProfile, NSError * _Nullable error) {
         if (userProfile && userProfile.count != 0){
             self.userProfile = userProfile[0];
@@ -54,6 +59,13 @@
             [self.profileImage loadInBackground];
         }
     }];
+}
+
+- (void)didUpdateProfile:(UIImage *)newImage{
+    self.profileImage.image = newImage;
+    dispatch_async(dispatch_get_main_queue(), ^(void){
+        [self.profileImage setImage:newImage];
+    });
 }
 
 -(void)updateHomeView{
@@ -123,4 +135,11 @@
     [self performSegueWithIdentifier:@"updateProfileSegue" sender:nil];
 }
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"updateProfileSegue"]) {
+        UpdateProfileViewController *updateProfileController = [segue destinationViewController];
+        updateProfileController.delegate = self;
+    }
+}
 @end

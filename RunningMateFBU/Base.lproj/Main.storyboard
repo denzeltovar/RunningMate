@@ -989,7 +989,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="createPersonalMessageTextField" destination="08H-Fq-Pe4" id="Bx9-YN-wnP"/>
-                        <outlet property="createProfileImageView" destination="BEh-0x-agF" id="Fbp-pU-s0u"/>
+                        <outlet property="createProfileImageView" destination="BEh-0x-agF" id="02B-Iv-dhK"/>
                         <segue destination="BGe-8a-UCp" kind="show" identifier="updateToHomeViewSegue" id="vo3-i1-5vM"/>
                     </connections>
                 </viewController>

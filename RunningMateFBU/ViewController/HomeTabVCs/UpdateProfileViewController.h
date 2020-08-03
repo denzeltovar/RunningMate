@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+@import Parse;
 
 NS_ASSUME_NONNULL_BEGIN
+@protocol UpdateProfileDelegate
 
+-(void) didUpdateProfile: (UIImage *)newImage;
+
+@end
 @interface UpdateProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@property (nonatomic, weak) id <UpdateProfileDelegate> delegate;
 
 @end
 

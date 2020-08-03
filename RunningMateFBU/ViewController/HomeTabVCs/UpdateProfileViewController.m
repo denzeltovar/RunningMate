@@ -35,6 +35,7 @@
 - (IBAction)didTapUpdateProfilePic:(id)sender {
     [UserProfile postUserImage:self.createProfileImageView.image withCaption:self.createPersonalMessageTextField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error){
         if (error == nil){
+            [self.delegate didUpdateProfile: self.createProfileImageView.image];
             [self dismissViewControllerAnimated:YES completion:nil];
         }
     }];
