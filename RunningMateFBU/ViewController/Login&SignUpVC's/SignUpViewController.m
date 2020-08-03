@@ -11,6 +11,7 @@
 @import Parse;
 @interface SignUpViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UIView *fadeInView;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @end
 
@@ -18,7 +19,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.fadeInView.alpha = 0;
+          [UIView animateWithDuration:5 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{self.fadeInView.alpha = 1;} completion:NULL];
 }
+
 - (void) registerAccount{
     PFUser *newUser = [PFUser user];
     newUser.username = self.usernameTextField.text;

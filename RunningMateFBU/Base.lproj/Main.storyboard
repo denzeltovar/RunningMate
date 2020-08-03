@@ -149,12 +149,12 @@
                                             <userLayoutGuide location="207" affinity="minX"/>
                                         </userGuides>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BLue Running Man" translatesAutoresizingMaskIntoConstraints="NO" id="qir-in-rDH">
-                                                <rect key="frame" x="33" y="86" width="240" height="177"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Green Running Man" translatesAutoresizingMaskIntoConstraints="NO" id="JGz-3b-0dp">
+                                                <rect key="frame" x="256" y="91" width="158" height="192"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Green Running Man" translatesAutoresizingMaskIntoConstraints="NO" id="atF-4g-VTa">
-                                                <rect key="frame" x="153" y="86" width="240" height="177"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BLue Running Man" translatesAutoresizingMaskIntoConstraints="NO" id="qir-in-rDH">
+                                                <rect key="frame" x="0.0" y="91" width="158" height="192"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
@@ -202,6 +202,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gP1-Ar-kDN"/>
                     <connections>
+                        <outlet property="fadeInView" destination="AlG-Qe-JF9" id="qpu-Qg-gqi"/>
                         <outlet property="passwordTextField" destination="6nE-xx-xaT" id="1ZS-BY-g8z"/>
                         <outlet property="usernameTextField" destination="7SY-ad-GtP" id="GrN-c7-QwO"/>
                         <segue destination="b5q-bK-1eJ" kind="show" identifier="homeViewSegue" id="vRr-6U-A4N"/>
@@ -347,12 +348,12 @@
                                             <userLayoutGuide location="207" affinity="minX"/>
                                         </userGuides>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Green Running Man" translatesAutoresizingMaskIntoConstraints="NO" id="fQX-TN-6Qx">
-                                                <rect key="frame" x="33" y="112" width="240" height="177"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BLue Running Man" translatesAutoresizingMaskIntoConstraints="NO" id="bYq-tC-i9R">
+                                                <rect key="frame" x="230" y="137" width="240" height="152"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BLue Running Man" translatesAutoresizingMaskIntoConstraints="NO" id="bYq-tC-i9R">
-                                                <rect key="frame" x="155" y="112" width="240" height="177"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Green Running Man" translatesAutoresizingMaskIntoConstraints="NO" id="fQX-TN-6Qx">
+                                                <rect key="frame" x="-33" y="137" width="240" height="152"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
@@ -400,6 +401,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="TUc-Fe-YqX"/>
                     <connections>
+                        <outlet property="fadeInView" destination="RLn-tr-fMh" id="pvv-oq-48W"/>
                         <outlet property="passwordTextField" destination="8iP-7w-NLE" id="SeR-qQ-sH2"/>
                         <outlet property="usernameTextField" destination="KWv-t9-sTG" id="zNr-mK-uui"/>
                     </connections>
@@ -1457,7 +1459,7 @@
         <image name="Blue Profile Icon" width="296" height="296"/>
         <image name="Green About Icon" width="258" height="258"/>
         <image name="Green Logout Icon" width="258" height="258"/>
-        <image name="Green Person" width="296" height="296"/>
+        <image name="Green Person" width="111" height="111"/>
         <image name="Green Running Man" width="296" height="296"/>
         <image name="HomeView Background" width="2135" height="1201"/>
         <image name="Logo" width="325" height="109"/>

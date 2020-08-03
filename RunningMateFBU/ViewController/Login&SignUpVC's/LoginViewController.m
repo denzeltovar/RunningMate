@@ -12,6 +12,7 @@
 
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UIView *fadeInView;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @end
 
@@ -19,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.fadeInView.alpha = 0;
+    [UIView animateWithDuration:5 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{self.fadeInView.alpha = 1;} completion:NULL];
 }
 
 - (IBAction)didTapLogin:(id)sender {
@@ -28,10 +31,10 @@
         if (error == nil) {
             [self performSegueWithIdentifier:@"homeViewSegue" sender:nil];
         } else {
-         SCLAlertView *alert = [[SCLAlertView alloc] init];
-         [alert showError:self title:@"Invalid Input"
-                 subTitle:@"Your input did not match with any users in our current database. Please make sure you have correctly inputted in your credentials. If you do not have an account you can register for an account by cliking sign up at the bottom of your sceen."
-         closeButtonTitle:@"OK" duration:0.0f];
+            SCLAlertView *alert = [[SCLAlertView alloc] init];
+            [alert showError:self title:@"Invalid Input"
+                    subTitle:@"Your input did not match with any users in our current database. Please make sure you have correctly inputted in your credentials. If you do not have an account you can register for an account by cliking sign up at the bottom of your sceen."
+            closeButtonTitle:@"OK" duration:0.0f];
         }
     }];
 }

@@ -17,7 +17,6 @@
 @interface CalanderViewController ()<UITableViewDataSource,UITableViewDelegate,FSCalendarDataSource,FSCalendarDelegate,UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet FSCalendar *calendar;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *calendarHeightConstraint;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
 @property (strong, nonatomic) NSDateFormatter *dateFormatter2;
