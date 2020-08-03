@@ -60,7 +60,6 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     self.createProfileImageView.image = [self resizeImage:editedImage withSize:CGSizeMake(414, 414)];
     

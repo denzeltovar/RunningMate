@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet FSCalendar *calendar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
-@property (strong, nonatomic) NSDateFormatter *dateFormatter2;
 @property (strong, nonatomic) NSMutableArray *eventFromDate;
 @property (strong, nonatomic) NSString *objectId;
 @property (strong, nonatomic) NSMutableArray* datesArray;
@@ -36,23 +35,18 @@
     if (self) {
         self.dateFormatter = [[NSDateFormatter alloc] init];
         self.dateFormatter.dateFormat = @"yyyy-MM-dd";
-        
-        self.dateFormatter2 = [[NSDateFormatter alloc] init];
-        self.dateFormatter2.dateFormat = @"yyyy-MM-dd HH:mm:ss Z";
     }
     return self;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.calendar.placeholderType = FSCalendarPlaceholderTypeNone;
     self.calendar.scope = FSCalendarScopeMonth;
-    
     [self.calendar selectDate:[NSDate date] scrollToDate:YES];
-    self.calendar.accessibilityIdentifier = @"calendar";
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
     self.datesArray = [[NSMutableArray alloc] init];
     [self fetchEventsDotsForDates];
 }

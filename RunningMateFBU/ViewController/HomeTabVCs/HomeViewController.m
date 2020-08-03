@@ -16,11 +16,11 @@
 @interface HomeViewController () <UpdateProfileDelegate>
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *upcomingWorkoutDate;
-@property (weak, nonatomic) IBOutlet UILabel *upcomingWorkout;
+@property (weak, nonatomic) IBOutlet UILabel *upcomingWorkoutDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *upcomingWorkoutLabel;
 @property (weak, nonatomic) IBOutlet UILabel *personalMessageLabel;
 @property (strong, nonatomic) NSDateFormatter *dateFormatter;
-@property (strong, nonatomic) NSMutableArray *allEvents;
+@property (strong, nonatomic) NSMutableArray *allEventsArray;
 @property (strong, nonatomic) NSString *amountOfWorkoutsCompletedString;
 @property (weak, nonatomic) IBOutlet UILabel *amountOfWorkoutsLeftLabel;
 @property (strong, nonatomic) NSString *amountOfWorkoutsLeftString;
@@ -33,17 +33,12 @@
     [super viewDidLoad];
     self.dateFormatter = [[NSDateFormatter alloc] init];
     self.dateFormatter.dateFormat = @"EEEE, MMM d, yyyy";
-    [self reloadInputViews];
     [self updateHomeView];
     [self updateActivity];
     [self fetchUserProfile];
     [self amountOfWorkoutsRemaining];
 }
 
-//-(void)viewDidAppear:(BOOL)animated {
-//    [super viewDidAppear:YES];
-//    [self fetchUserProfile];
-//}
 
 -(void)fetchUserProfile{
     PFQuery *query = [PFQuery queryWithClassName:@"UserProfile"];
@@ -78,9 +73,9 @@
     [eventsQuery findObjectsInBackgroundWithBlock:^(NSArray* events, NSError *error) {
         if (events && events.count != 0) {
             WorkoutEvent *workout = events.firstObject;
-            self.upcomingWorkout.text = [NSString stringWithFormat:@"Upcoming workout will consist of running %@ meters!", workout.workout];
+            self.upcomingWorkoutLabel.text = [NSString stringWithFormat:@"Upcoming workout will consist of running %@ meters!", workout.workout];
             NSString *upcomingEventDate = [self.dateFormatter stringFromDate:workout.dateOfWorkout];
-            self.upcomingWorkoutDate.text = [ @"Upcoming event is on," stringByAppendingString:upcomingEventDate];
+            self.upcomingWorkoutDateLabel.text = [ @"Upcoming event is on," stringByAppendingString:upcomingEventDate];
             self.amountOfWorkoutsCompletedLabel.text = self.amountOfWorkoutsCompletedString;
         }
     }];
@@ -96,7 +91,7 @@
     [eventsQuery findObjectsInBackgroundWithBlock:^(NSArray* events, NSError *error) {
         if (events && events.count != 0) {
             int amountOfworkoutsRemaining = 0;
-            for (PFObject *event in events){
+            for (int i= 0; i <= events.count; i++){
                 amountOfworkoutsRemaining = amountOfworkoutsRemaining + 1;
             }
             self.amountOfWorkoutsLeftString = [NSString stringWithFormat:@"You have a total of %d workouts remaining" ,amountOfworkoutsRemaining];
@@ -113,9 +108,9 @@
     [eventsQuery whereKey:@"author" equalTo:[PFUser currentUser]];
     [eventsQuery findObjectsInBackgroundWithBlock:^(NSArray <WorkoutEvent *> * _Nullable events, NSError * _Nullable error) {
         if (events && events.count != 0) {
-            self.allEvents = (NSMutableArray *) events;
+            self.allEventsArray = (NSMutableArray *) events;
             int finishedWorkoutsCounter = 0;
-            for (PFObject *event in self.allEvents) {
+            for (PFObject *event in self.allEventsArray) {
                 NSNumber *didFinishWorkout = [event valueForKey:@"didFinishWorkout"];
                 if (didFinishWorkout == [NSNumber numberWithUnsignedShort:1]){
                     finishedWorkoutsCounter = finishedWorkoutsCounter + 1;
