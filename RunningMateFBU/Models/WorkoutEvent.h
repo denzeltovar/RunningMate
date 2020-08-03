@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *workout;
 @property (nonatomic, strong) NSString *timeOfDay;
 @property (nonatomic, strong) NSDate *dateOfWorkout;
+@property (nonatomic,strong) PFUser *author;
 @property (nonatomic) int didFinishWorkout;
 
 @end

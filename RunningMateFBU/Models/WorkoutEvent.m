@@ -15,6 +15,7 @@
 @dynamic didFinishWorkout;
 @dynamic dateOfWorkout;
 @dynamic timeOfDay;
+@dynamic author;
 @dynamic workout;
 
 

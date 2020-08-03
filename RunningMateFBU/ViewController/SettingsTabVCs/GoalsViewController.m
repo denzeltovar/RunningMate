@@ -29,6 +29,7 @@
     NSDate *today = [NSDate date];
     PFQuery *updateQuery = [PFQuery queryWithClassName:@"WorkoutEvent"];
     [updateQuery whereKey:@"dateOfWorkout" greaterThanOrEqualTo:today];
+    [updateQuery whereKey:@"author" equalTo:[PFUser currentUser]];
     [updateQuery orderByAscending:@"dateOfWorkout"];
     [updateQuery findObjectsInBackgroundWithBlock:^(NSArray *deleteUpcomingEvents, NSError * error) {
         if (deleteUpcomingEvents && deleteUpcomingEvents.count != 0) {
@@ -60,6 +61,7 @@
         workout[@"dateOfWorkout"] = dateOfWorkout;
         workout[@"timeOfDay"] = timeOfWorkout;
         workout[@"didFinishWorkout"] = @0;
+        workout[@"author"] = [PFUser currentUser];
         [workout saveInBackground];
     }
 }

@@ -64,6 +64,7 @@
     [eventsQuery orderByAscending:@"dateOfWorkout"];
     [eventsQuery whereKey:@"dateOfWorkout" lessThan:[date dateByAddingTimeInterval:oneDay]];
     [eventsQuery whereKey:@"dateOfWorkout" greaterThanOrEqualTo:date];
+    [eventsQuery whereKey:@"author" equalTo:[PFUser currentUser]];
     eventsQuery.limit = 1;
     
     [eventsQuery findObjectsInBackgroundWithBlock:^(NSArray<WorkoutEvent *> * _Nullable events, NSError * _Nullable error) {
@@ -81,6 +82,7 @@
     PFQuery *eventsQuery = [PFQuery queryWithClassName:@"WorkoutEvent"];
     [eventsQuery orderByAscending:@"dateOfWorkout"];
     [eventsQuery whereKeyExists:@"dateOfWorkout"];
+    [eventsQuery whereKey:@"author" equalTo:[PFUser currentUser]];
     NSArray *eventObjects = [eventsQuery findObjects];
     if (eventObjects) {
         for (WorkoutEvent *event in eventObjects){

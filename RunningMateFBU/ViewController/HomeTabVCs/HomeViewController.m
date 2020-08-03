@@ -43,6 +43,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"UserProfile"];
     [query whereKey:@"author" equalTo: [PFUser currentUser]];
     [query orderByDescending: @"updatedAt"];
+    [query whereKey:@"author" equalTo:[PFUser currentUser]];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable userProfile, NSError * _Nullable error) {
         if (userProfile && userProfile.count != 0){
             self.userProfile = userProfile[0];
@@ -60,6 +61,7 @@
     PFQuery *eventsQuery = [PFQuery queryWithClassName:@"WorkoutEvent"];
     [eventsQuery orderByAscending:@"dateOfWorkout"];
     [eventsQuery whereKey:@"dateOfWorkout" greaterThanOrEqualTo:today];
+    [eventsQuery whereKey:@"author" equalTo:[PFUser currentUser]];
     eventsQuery.limit = 1;
     [eventsQuery findObjectsInBackgroundWithBlock:^(NSArray* events, NSError *error) {
         if (events && events.count != 0) {
@@ -78,6 +80,7 @@
     PFQuery *eventsQuery = [PFQuery queryWithClassName:@"WorkoutEvent"];
     [eventsQuery orderByAscending:@"dateOfWorkout"];
     [eventsQuery whereKey:@"dateOfWorkout" greaterThanOrEqualTo:today];
+    [eventsQuery whereKey:@"author" equalTo:[PFUser currentUser]];
     [eventsQuery findObjectsInBackgroundWithBlock:^(NSArray* events, NSError *error) {
         if (events && events.count != 0) {
             int amountOfworkoutsRemaining = 0;
@@ -95,6 +98,7 @@
     PFQuery *eventsQuery = [PFQuery queryWithClassName:@"WorkoutEvent"];
     [eventsQuery orderByAscending:@"dateOfWorkout"];
     [eventsQuery whereKey:@"dateOfWorkout" lessThanOrEqualTo:today];
+    [eventsQuery whereKey:@"author" equalTo:[PFUser currentUser]];
     [eventsQuery findObjectsInBackgroundWithBlock:^(NSArray <WorkoutEvent *> * _Nullable events, NSError * _Nullable error) {
         if (events && events.count != 0) {
             self.allEvents = (NSMutableArray *) events;
