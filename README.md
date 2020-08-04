@@ -194,16 +194,19 @@ The following **optional** features are implemented:
 - [ ] User can create an invent directly from the calendar.
 - [ ] Use an API which retreives all nearby races and be able to create an event in FSCalendar.
 
-## Video Walkthrough
-
+## Video Walkthroughs
 Here's a walkthrough of implemented user stories:
-## Login / Sign Up
+
+# Login / Sign Up
 <img src='http://g.recordit.co/aysTVhBcdS.gif' title='Login / Signup Walkthrough' width='' alt='Log In Walkthrough' />
-## Home tab
+
+# Home tab
 <img src='http://g.recordit.co/FPS1iDKIyw.gif' title='Login / Signup Walkthrough' width='' alt='Home Tab Walkthrough' />
-## Calendar Tab
+
+# Calendar Tab
 <img src='http://g.recordit.co/vjotoeGB4Z.gif' title='Calendar Tab' width='' alt='Calendar Walkthrough' />
-## Settings Tab
+
+# Settings Tab
 <img src='http://g.recordit.co/1JbVbpHCV3.gif' title='Setings Tab' width='' alt='Settings Walkthrough' />
 
 
