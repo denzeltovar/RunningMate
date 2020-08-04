@@ -197,13 +197,17 @@ The following **optional** features are implemented:
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
+## Login / Sign Up
+<img src='http://g.recordit.co/aysTVhBcdS.gif' title='Login / Signup Walkthrough' width='' alt='Log In Walkthrough' />
+## Home tab
+<img src='http://g.recordit.co/FPS1iDKIyw.gif' title='Login / Signup Walkthrough' width='' alt='Home Tab Walkthrough' />
+## Calendar Tab
+<img src='http://g.recordit.co/vjotoeGB4Z.gif' title='Calendar Tab' width='' alt='Calendar Walkthrough' />
+## Settings Tab
+<img src='http://g.recordit.co/1JbVbpHCV3.gif' title='Setings Tab' width='' alt='Settings Walkthrough' />
 
-<img src='http://g.recordit.co/aysTVhBcdS.gif' title='Login / Signup Walkthrough' width='' alt='Video Walkthrough' />
-<img src='http://g.recordit.co/FPS1iDKIyw.gif' title='Login / Signup Walkthrough' width='' alt='Video Walkthrough' />
-<img src='http://g.recordit.co/vjotoeGB4Z.gif' title='Calendar Tab' width='' alt='Video Walkthrough' />
-<img src='http://g.recordit.co/1JbVbpHCV3.gif' title='Setings Tab' width='' alt='Video Walkthrough' />
 
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+GIF created with [Record it]
 
 ## Credits
 
