@@ -499,7 +499,7 @@
                                 <rect key="frame" x="8" y="20" width="398" height="331"/>
                                 <subviews>
                                     <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="zlS-ET-Y2A" customClass="FSCalendar">
-                                        <rect key="frame" x="8" y="44" width="382" height="279"/>
+                                        <rect key="frame" x="8" y="8" width="382" height="315"/>
                                         <color key="backgroundColor" name="Backround Color"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="firstWeekday">
@@ -633,7 +633,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQx-dj-qAy">
-                                <rect key="frame" x="170" y="204" width="228" height="88"/>
+                                <rect key="frame" x="170" y="148" width="228" height="88"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gll-ET-8oF">
                                         <rect key="frame" x="6" y="8" width="214" height="27"/>
@@ -670,13 +670,13 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HomeView Background" translatesAutoresizingMaskIntoConstraints="NO" id="Q76-sD-yq9">
-                                <rect key="frame" x="0.0" y="56" width="414" height="140"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="EVr-13-CDC"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t8a-fu-7c8">
-                                <rect key="frame" x="16" y="300" width="382" height="158"/>
+                                <rect key="frame" x="16" y="244" width="382" height="158"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upcoming Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XnX-os-XWw">
                                         <rect key="frame" x="106" y="8" width="170" height="30"/>
@@ -727,7 +727,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7R3-yr-Fg4">
-                                <rect key="frame" x="16" y="474" width="382" height="226"/>
+                                <rect key="frame" x="16" y="418" width="382" height="226"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Activity" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zk9-dX-4wD">
                                         <rect key="frame" x="151" y="8" width="81" height="29"/>
@@ -791,7 +791,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42j-gF-Xln">
-                                <rect key="frame" x="16" y="716" width="382" height="30"/>
+                                <rect key="frame" x="16" y="660" width="382" height="30"/>
                                 <color key="backgroundColor" name="Third Color"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Update Profile Picture">
@@ -808,7 +808,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Blue Profile Icon" translatesAutoresizingMaskIntoConstraints="NO" id="3Og-bP-kSL" customClass="PFImageView">
-                                <rect key="frame" x="16" y="142" width="150" height="150"/>
+                                <rect key="frame" x="16" y="86" width="150" height="150"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="aTz-l3-RPH"/>
@@ -1373,10 +1373,41 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHl-Tp-cyM">
-                                <rect key="frame" x="20" y="168" width="358" height="110"/>
+                                <rect key="frame" x="20" y="168" width="374" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BR-AL-P1a">
+                                <rect key="frame" x="20" y="135" width="374" height="144"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Welcome to Running Mate! This app is designed by me (Denzel Tovar). The purpose of the app is to help you create and organize a workout plan that is easy to follow and fun to use!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="First Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3W0-P8-Rqx">
+                                <rect key="frame" x="20" y="287" width="374" height="144"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">If you are a new user you should go to the Goals page in the settings tab to begin on creating a workout plan set to your preference. Once created, you can see all your scheduled workouts in the calendar tab and track your process in the home tab.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="Third Color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Blue Person" translatesAutoresizingMaskIntoConstraints="NO" id="Kz7-15-rDg">
+                                <rect key="frame" x="154" y="541" width="240" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Green Person" translatesAutoresizingMaskIntoConstraints="NO" id="Wk7-Ui-nYu">
+                                <rect key="frame" x="20" y="541" width="240" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enjoy!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zc-PG-YA4">
+                                <rect key="frame" x="146" y="461" width="123" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="47"/>
+                                <color key="textColor" name="First Color"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -1387,7 +1418,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwH-OS-JV1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4635" y="808"/>
+            <point key="canvasLocation" x="4634.7826086956529" y="807.58928571428567"/>
         </scene>
         <!--Settings-->
         <scene sceneID="EW0-uL-tEX">
@@ -1449,7 +1480,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cMj-Wb-Cgz"/>
         <segue reference="vo3-i1-5vM"/>
         <segue reference="E6l-My-Fq8"/>
     </inferredMetricsTieBreakers>
