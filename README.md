@@ -201,7 +201,7 @@ Here's a walkthrough of implemented user stories:
 <img src='http://g.recordit.co/aysTVhBcdS.gif' title='Login / Signup Walkthrough' width='' alt='Log In Walkthrough' />
 
 # Home tab
-<img src='http://g.recordit.co/FPS1iDKIyw.gif' title='Login / Signup Walkthrough' width='' alt='Home Tab Walkthrough' />
+<img src='http://g.recordit.co/Uze35VedqT.gif' title='Login / Signup Walkthrough' width='' alt='Home Tab Walkthrough' />
 
 # Calendar Tab
 <img src='http://g.recordit.co/vjotoeGB4Z.gif' title='Calendar Tab' width='' alt='Calendar Walkthrough' />
