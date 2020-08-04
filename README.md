@@ -199,7 +199,7 @@ The following **optional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 <img src='http://g.recordit.co/aysTVhBcdS.gif' title='Login / Signup Walkthrough' width='' alt='Video Walkthrough' />
-<img src='http://g.recordit.co/FPS1iDKIyw.gif' title='Home Tab' width='' alt='Video Walkthrough' />
+<img src='https://recordit.co/FPS1iDKIyw' title='Home Tab' width='' alt='Video Walkthrough' />
 <img src='http://g.recordit.co/vjotoeGB4Z.gif' title='Calendar Tab' width='' alt='Video Walkthrough' />
 <img src='http://g.recordit.co/1JbVbpHCV3.gif' title='Setings Tab' width='' alt='Video Walkthrough' />
 
