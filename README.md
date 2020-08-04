@@ -198,9 +198,10 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://g.recordit.co/xnyYID6vpH.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='http://g.recordit.co/dXDBbeBZuB.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-<img src='http://g.recordit.co/Nu7D3a3Sgh.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/aysTVhBcdS.gif' title='Login / Signup Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/FPS1iDKIyw.gif' title='Home Tab' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/vjotoeGB4Z.gif' title='Calendar Tab' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/1JbVbpHCV3.gif' title='Setings Tab' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -208,8 +209,6 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
-- [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
-- [UIImageView+AFNetworking.]
 - [Parse]
 - [Cocoa Pods] - Pods I installed for app are 'FSCalendar', 'Parse', 'Parse UI', and 'SCLAlertView-Objective-C'.
 - [Frameworks] - UIKit Framework and User Notification Framwork.
@@ -222,7 +221,7 @@ I developed as their is still room for imrovement.
 
 ## License
 
-    Copyright [1997] [Denzel Tovar]
+    Copyright [2020] [Denzel Tovar]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
