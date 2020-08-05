@@ -105,7 +105,7 @@
                 cell.eventDateLabel.text = eventDateString;
                 cell.didFinishWorkoutSwitch.hidden = NO;
                 cell.didFinishWorkoutLabel.text = @"Did you finish your workout?";
-                cell.eventWorkoutLabel.text = [NSString stringWithFormat:@"Todays workout will consist of running %@ meters", event.workout];
+                cell.eventWorkoutLabel.text = [NSString stringWithFormat:@"Todays workout will consist of running %@ meters at %@", event.workout, event.timeOfDay];
                 cell.didFinishWorkoutSwitch.on = event.didFinishWorkout;
                 [cell.didFinishWorkoutSwitch addTarget:self action:@selector(didTapSwitch:) forControlEvents:UIControlEventValueChanged];
                 return cell;
