@@ -56,8 +56,9 @@
     }];
 }
 
-- (void)didUpdateProfile:(UIImage *)newImage{
+- (void)didUpdateProfile:(UIImage *)newImage personalMessage:(NSString *)personalMessage{
     self.profileImage.image = newImage;
+    self.personalMessageLabel.text = personalMessage;
     dispatch_async(dispatch_get_main_queue(), ^(void){
         [self.profileImage setImage:newImage];
     });

@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @protocol UpdateProfileDelegate
 
--(void) didUpdateProfile: (UIImage *)newImage;
+-(void) didUpdateProfile: (UIImage *)newImage personalMessage: (NSString *)personalMessage;
 
 @end
 @interface UpdateProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>

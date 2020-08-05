@@ -17,6 +17,7 @@
 		CC2D934324BCD7B00016E5D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D934224BCD7B00016E5D2 /* main.m */; };
 		CC2D934D24BCD7B00016E5D2 /* RunningMateFBUTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D934C24BCD7B00016E5D2 /* RunningMateFBUTests.m */; };
 		CC2D935824BCD7B00016E5D2 /* RunningMateFBUUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2D935724BCD7B00016E5D2 /* RunningMateFBUUITests.m */; };
+		CC4E1E1A24D9C2B100CF661E /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4E1E1924D9C2B100CF661E /* HomeKit.framework */; };
 		CC50225E24BE11690081F565 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC50225D24BE11690081F565 /* HomeViewController.m */; };
 		CC50226124BE13A40081F565 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC50226024BE13A40081F565 /* SettingsTableViewController.m */; };
 		CC5A447F24BFABEE00306D0E /* LogOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5A447E24BFABEE00306D0E /* LogOutViewController.m */; };
@@ -71,6 +72,7 @@
 		CC2D935324BCD7B00016E5D2 /* RunningMateFBUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunningMateFBUUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC2D935724BCD7B00016E5D2 /* RunningMateFBUUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunningMateFBUUITests.m; sourceTree = "<group>"; };
 		CC2D935924BCD7B00016E5D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC4E1E1924D9C2B100CF661E /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 		CC50225C24BE11690081F565 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		CC50225D24BE11690081F565 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		CC50225F24BE13A40081F565 /* SettingsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC4E1E1A24D9C2B100CF661E /* HomeKit.framework in Frameworks */,
 				818D3E3B7A9B89CA400DFE76 /* Pods_RunningMateFBU.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,6 +132,7 @@
 		75992478CF73AD3B3E4FBB4A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CC4E1E1924D9C2B100CF661E /* HomeKit.framework */,
 				0C1BC6C7143798FA57D8280D /* Pods_RunningMateFBU.framework */,
 				0A9F903D926C97AEC22AB3A3 /* Pods_RunningMateFBU_RunningMateFBUUITests.framework */,
 				A131F1F1FBAE3E16EABC133E /* Pods_RunningMateFBUTests.framework */,
@@ -704,6 +708,7 @@
 			baseConfigurationReference = 4EF245F8356F6626B5DCF934 /* Pods-RunningMateFBU.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RunningMateFBU/RunningMateFBU.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BHR2WYHD4V;
 				INFOPLIST_FILE = RunningMateFBU/Info.plist;
@@ -722,6 +727,7 @@
 			baseConfigurationReference = FE3073A4ADC1D513B90C61A7 /* Pods-RunningMateFBU.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RunningMateFBU/RunningMateFBU.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BHR2WYHD4V;
 				INFOPLIST_FILE = RunningMateFBU/Info.plist;
