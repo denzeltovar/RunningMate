@@ -27,6 +27,7 @@
 @implementation CalanderViewController
 
 -(void)viewWillAppear:(BOOL)animated {
+    [self fetchEventsForDates:self.calendar.selectedDate];
     [self.tableView reloadData];
 }
 
@@ -48,43 +49,23 @@
     self.tableView.delegate = self;
     
     self.datesArray = [[NSMutableArray alloc] init];
-    [self fetchEventsDotsForDates];
 }
 
 -(void)fetchEventsForDates:(NSDate *)date {
-    NSTimeInterval oneDay = (double) 24 * 60 * 60;
-    
-    PFQuery *eventsQuery = [PFQuery queryWithClassName:@"WorkoutEvent"];
-    [eventsQuery orderByAscending:@"dateOfWorkout"];
-    [eventsQuery whereKey:@"dateOfWorkout" lessThan:[date dateByAddingTimeInterval:oneDay]];
-    [eventsQuery whereKey:@"dateOfWorkout" greaterThanOrEqualTo:date];
-    [eventsQuery whereKey:@"author" equalTo:[PFUser currentUser]];
-    eventsQuery.limit = 1;
-    
-    [eventsQuery findObjectsInBackgroundWithBlock:^(NSArray<WorkoutEvent *> * _Nullable events, NSError * _Nullable error) {
-        if (events && events.count != 0) {
-            self.eventFromDate = (NSMutableArray *) events;
-            [self.tableView reloadData];
-        }else {
-            self.eventFromDate = nil;
-            [self.tableView reloadData];
-        }
-    }];
-}
-
--(void)fetchEventsDotsForDates {
     PFQuery *eventsQuery = [PFQuery queryWithClassName:@"WorkoutEvent"];
     [eventsQuery orderByAscending:@"dateOfWorkout"];
     [eventsQuery whereKeyExists:@"dateOfWorkout"];
     [eventsQuery whereKey:@"author" equalTo:[PFUser currentUser]];
     NSArray *eventObjects = [eventsQuery findObjects];
     if (eventObjects) {
-        for (WorkoutEvent *event in eventObjects){
-            NSString *dateString = [self.dateFormatter stringFromDate:event.dateOfWorkout];
-            [self.datesArray addObject:dateString];
+        for (WorkoutEvent *event in eventObjects) {
+            NSString *eventDateString = [self.dateFormatter stringFromDate:event.dateOfWorkout];
+            [self.datesArray addObject:eventDateString];
+            }
         }
-        [self.calendar reloadData];
-    }
+    self.eventFromDate = (NSMutableArray *) eventObjects;
+    [self.tableView reloadData];
+    [self.calendar reloadData];
 }
 
 - (void)dealloc {
@@ -115,23 +96,29 @@
 
 - (nonnull UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     WorkoutCell *cell =[tableView dequeueReusableCellWithIdentifier:@"WorkoutCell"];
-    WorkoutEvent *workout = self.eventFromDate[indexPath.row];
-    NSDate *eventDate = workout.dateOfWorkout;
-    NSString *eventDateString = [_dateFormatter stringFromDate:eventDate];
-    cell.eventDateLabel.text = eventDateString;
-    cell.eventWorkoutLabel.text = [NSString stringWithFormat:@"Todays workout will consist of running %@ meters", workout.workout];
-    if (self.eventFromDate.count > 0) {
-        self.objectId = workout.objectId;
-        cell.didFinishWorkoutSwitch.hidden = NO;
-        cell.didFinishWorkoutLabel.text = @"Did you finish your workout?";
-        cell.didFinishWorkoutSwitch.on = workout.didFinishWorkout;
-        [cell.didFinishWorkoutSwitch addTarget:self action:@selector(didTapSwitch:) forControlEvents:UIControlEventValueChanged];
+    NSString *selectedDateString = [self.dateFormatter stringFromDate:self.calendar.selectedDate];
+    if ([self.datesArray containsObject:selectedDateString]){
+        for (WorkoutEvent *event in self.eventFromDate){
+            NSString *eventDateString = [self.dateFormatter stringFromDate:event.dateOfWorkout];
+            if ([self.calendar.selectedDate compare:event.dateOfWorkout] == NSOrderedAscending){
+                self.objectId = event.objectId;
+                cell.eventDateLabel.text = eventDateString;
+                cell.didFinishWorkoutSwitch.hidden = NO;
+                cell.didFinishWorkoutLabel.text = @"Did you finish your workout?";
+                cell.eventWorkoutLabel.text = [NSString stringWithFormat:@"Todays workout will consist of running %@ meters", event.workout];
+                cell.didFinishWorkoutSwitch.on = event.didFinishWorkout;
+                [cell.didFinishWorkoutSwitch addTarget:self action:@selector(didTapSwitch:) forControlEvents:UIControlEventValueChanged];
+                return cell;
+            }
+        }
+        
     } else {
         cell.eventDateLabel.text = nil;
         cell.didFinishWorkoutSwitch.hidden = YES;
         cell.eventWorkoutLabel.text = @"There is no event for today. Enjoy your rest day!";
         cell.didFinishWorkoutLabel.text = nil;
     }
+    [self.datesArray removeAllObjects];
     return cell;
 }
 
