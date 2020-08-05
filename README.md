@@ -29,81 +29,78 @@ The scope for the project fulfills all the requirments for the app although the 
 
 **Required Must-have Stories**
 
-* Creating a Log in screen and having a logout butoon
-* Establishing a Parse Data base for the project
-* Creating and setting up the home screen
-* Add camera usage for profile picture
-* Have user set goals and prefereneces
-* Have entered information create a plan that is then sent to their calander
-* Set Up workout plans in database and create a function that would pull workout plan
-  from Parse dependant of their choices set up from their goals.
-* Also have labels that shows this weeks goals and percantage of improvment from previous week
-* Creating a Tab bar to acess two other tabs
-* Use FSCalander Framework to create calander in calander tab
-* Establish the settings tab and creating a detail view controller for Notifications
-* Set notifications to remind user of workouts
-* Be able to properly tranistion throughout all screens.
-* Have all 3 Tabs to interacts sommothly
-* Fix UI to make it look more representable
+- [ ] Setting up our wireframe and skeleton view
+- [ ] Creating a Log in screen and having a logout butoon
+- [ ] User can create a new profile
+- [ ] Establishing a Parse Data base for the project
+- [ ] Creating and setting up the home screen
+- [ ] Add camera usage for profile picture
+- [ ] Have user set goals and prefereneces
+- [ ] Create an algorithm that receives user preferences and customizes user workout plan.
+- [ ] Create a function that would query the necessary information needed for the stream view and FSCalendar SDK
+- [ ] Also have labels that shows this weeks goals and activity in home stream
+- [ ] Creating a Tab bar to acess ti three total tabs
+- [ ] Use FSCalander Framework to create calander in calander tab
+- [ ] Establish the settings tab and creating a detail view controller for Notifications
+- [ ] Set notifications to remind user of workouts
+- [ ] Be able to properly tranistion throughout all screens.
+- [ ] Have all 3 Tabs to interacts sommothly
+- [ ] Fix UI and implement an external library.
+- [ ] Incorporate animations and gestures
 
 
 **Optional Nice-to-have Stories**
 
-* [Decorate and make the UI look great]
-* [Add additional features to settings]
-* [Add additional features to Goals]
-*  Add an additional tab for "Events"
-* Connect to Running API and be able to display local races
-* Be able to search for races
-* Have customizable filters for searching for racea
-* Be able to add event to calander from event tab
+- [ ] Decorate and made the UI look great - Created my own logos, assets, and color scheme to decorate the UI. I also used view containers to apply shadows to various objects to improve the appearence to the user.
+- [ ] Add additional features to Calendar - User UI was imporved and also the User has the ability to mark they finished a workout. When user marks they finished a workout they also recieve "congrats" alert.
+- [ ] Creating a detail view controller for Notifications
+- [ ] Implementing Notifications
+- [ ] User can create an invent directly from the calendar.
+- [ ] Use an API which retreives all nearby races and be able to create an event in FSCalendar.
+
 
 ### 2. Screen Archetypes
 
 * [Login & Setup]
-   * [Accepting varying types of form input from user for basic login / signup]
-   * [Validation of form inputs for invalid data (i.e bad emails, duplicate emails)]
+   * [Accepting various types of form input from user for basic login / signup]
+   * [Validation of form inputs for invalid data (i.e Invalid inputs)]
    * [Integrating third-party connection SDKs (i.e Calander SDK)]
  
 * [Streaming]
    * [Set up a navigation controller for the home page]
    * [Properly set up the layout in storyboard and create outlets]
-   * [Have home page display total mileage completed since start of program, workout plan for the week, and the profile image of the user.]
+   * [Have home page display an overview of current day workout plan and user activity throughout workout plan]
 
 * [Settings]
    * [Create a new view controller that will be connected though tabs.]
    * [Properly layout the story board and create it's outlets]
-   * [Create cells for "notifications", "log out"and "about"]
+   * [Create cells for "Goals", "log out"and "about"]
    * [Each label will have it's own segue to a details view controller where it will allow the user to customize some prefrences, have details on how the app works, and give the user the ability to log out.]
- * [Goals]
-   * [Create a new view controller that will be connected though tabs.]
-   * [Properly layout the story board and create it's outlets]
-   * [Create a label where it will allow you to create a note for the day]
    * [Allow user to customize goals for daily,weekly, and monthly purposes.]
    * [Be able to send notifications as reminders for upcoming workouts or events]
- 
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
 * [Calander]
-* [Goals]
+* [Home]
 * [Settings]
 
 **Flow Navigation** (Screen to Screen)
 
-* [Goals]
-    * Set Goals
+* [Home]
+   * [Home Stream]
+   * [Update Profile Image]
    
 * [Calander]
-   * [Notes]
-   * [Todays goal]
-   * [Add eevent]
+   * [Event]
+   * [Todays workout]
+   * [FSCalendar]
 * [Settings]
-   * [Notifications about General Settings]
+   * [Goals]
    * [About page]
-   * Log Out
+   * [Log Out]
    
    
 ## Wireframes
@@ -158,3 +155,89 @@ The scope for the project fulfills all the requirments for the app although the 
       - (Update/PUT) Update user profile image
 
 
+# Final Product - Running Mate
+
+**Running Mate** The app implements FSCalendar and Parse Dashboard to create a customized workout plan created from the users preference. Once the workout plan is created their home page consists of an overview of users activity and progress. The user can also customize their home view by being able to change their  profile image and create their own personal message. All together the app will be used for users to start a running regime in which the app will organize your workouts in your calendar and the user will visually be able to see their progress throughout their workout plan.
+
+Time spent: **120** hours spent in total researching and working on the app
+
+## User Stories
+
+The following  is the **required** functionality I had set for my project:
+
+**Required Must-have Stories**
+- [x] Setting up our wireframe and skeleton view
+- [x] Creating a Log in screen and having a logout butoon
+- [x] User can create a new profile
+- [x] Establishing a Parse Data base for the project
+- [x] Creating and setting up the home screen
+- [x] Add camera usage for profile picture
+- [x] Have user set goals and prefereneces
+- [x] Create an algorithm that receives user preferences and customizes user workout plan.
+- [x] Create a function that would query the necessary information needed for the stream view and FSCalendar SDK
+- [x] Also have labels that shows this weeks goals and activity in home stream
+- [x] Creating a Tab bar to acess ti three total tabs
+- [x] Use FSCalander Framework to create calander in calander tab
+- [x] Establish the settings tab
+- [x] Set notifications to remind user of workouts
+- [x] Be able to properly tranistion throughout all screens.
+- [x] Have all 3 Tabs to interacts sommothly
+- [x] Fix UI and implement an external library.
+- [x] Incorporate animations and gestures
+
+The following **optional** features are implemented:
+
+- [x] Decorate and made the UI look great - Created my own logos, assets, and color scheme to decorate the UI. I also used view containers to apply shadows to various objects to improve the appearence to the user.
+- [x] Add additional features to Calendar - User UI was imporved and also the User has the ability to mark they finished a workout. When user marks they finished a workout they also recieve "congrats" alert.
+- [ ] Creating a detail view controller for Notifications
+- [ ] Implementing Notifications
+- [ ] User can create an invent directly from the calendar.
+- [ ] Use an API which retreives all nearby races and be able to create an event in FSCalendar.
+
+## Video Walkthroughs
+Here's a walkthrough of implemented user stories:
+
+# Login / Sign Up
+<img src='http://g.recordit.co/aysTVhBcdS.gif' title='Login / Signup Walkthrough' width='' alt='Log In Walkthrough' />
+
+# Home tab
+<img src='http://g.recordit.co/Uze35VedqT.gif' title='Login / Signup Walkthrough' width='' alt='Home Tab Walkthrough' />
+
+# Calendar Tab
+<img src='http://g.recordit.co/vjotoeGB4Z.gif' title='Calendar Tab' width='' alt='Calendar Walkthrough' />
+
+# Settings Tab
+<img src='http://g.recordit.co/1JbVbpHCV3.gif' title='Setings Tab' width='' alt='Settings Walkthrough' />
+
+
+GIF created with [Record it]
+
+## Credits
+
+List an 3rd party libraries, icons, graphics, or other assets you used in your app.
+
+- [Parse]
+- [Cocoa Pods] - Pods I installed for app are 'FSCalendar', 'Parse', 'Parse UI', and 'SCLAlertView-Objective-C'.
+- [Frameworks] - UIKit Framework and User Notification Framwork.
+
+
+## Notes
+This week went by a lot smoother than the previous week although their are still things I need to imrove on. Such as being consistant in 
+editing my code while making progress, being more on top of my commit and pushes to github, and continue improving on the skills 
+I developed as their is still room for imrovement.
+
+## License
+
+    Copyright [2020] [Denzel Tovar]
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
