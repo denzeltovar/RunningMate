@@ -128,9 +128,9 @@
     [query getObjectInBackgroundWithId:self.objectId block:^(PFObject *workout, NSError *error) {
         if (!error) {
             workout[@"didFinishWorkout"] = workoutSwitch.on ? @(1) : @(0);;
-            if(workoutSwitch.on == 1){
+            if (workoutSwitch.on == 1) {
                 SCLAlertView *alert = [[SCLAlertView alloc] init];
-                [alert showSuccess:self title:@"Keep it Up!" subTitle:@"Congrates on completing your workout! Keep up the good Work!" closeButtonTitle:@"Done" duration:7.0];
+                [alert showSuccess:self title:@"Keep it Up!" subTitle:@"Congrats on completing your workout! Keep up the good work!" closeButtonTitle:@"Done" duration:7.0];
             }
             [workout saveInBackground];
         }

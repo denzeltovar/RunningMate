@@ -25,7 +25,7 @@
     [super viewDidLoad];
 }
 
--(void)deleteUpcomingEvents{
+-(void)deleteUpcomingEvents {
     NSDate *today = [NSDate date];
     PFQuery *updateQuery = [PFQuery queryWithClassName:@"WorkoutEvent"];
     [updateQuery whereKey:@"dateOfWorkout" greaterThanOrEqualTo:today];
@@ -40,7 +40,7 @@
     }];
 }
 
--(void)sendWorkoutPlanToParseWithDistance: (int long) workoutDistancePlan timeOfWorkout:(NSString *) timeOfWorkout timeFrame:(int long) amountOfWorkouts{
+-(void)sendWorkoutPlanToParseWithDistance: (int long) workoutDistancePlan timeOfWorkout:(NSString *) timeOfWorkout timeFrame:(int long) amountOfWorkouts {
     NSInteger workoutDistance = 0;
     NSDate *dateOfWorkout = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
